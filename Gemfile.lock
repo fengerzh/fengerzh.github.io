@@ -240,8 +240,9 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-admin
-  jekyll-feed (~> 0.6)
+  jemoji
   minima (~> 2.0)
+  rouge
   tzinfo-data
 
 BUNDLED WITH

@@ -1,11 +1,50 @@
+#theme: minima
+
+# Site Settings
 title: 日新亭
 email: buzz.zhang@gmail.com
 description: 从业二十余载矣，喜技艺，不求精进，不求甚解，精力尚济时辄取新艺以尝，积久亦无大成，惟好此耳。
 baseurl: ''
+#baseurl: "/jekflix-template" # the subpath of your site, e.g. /blog
 url: 'http://www.fengerzh.com/'
-twitter_username: ''
+#url: "https://www.rossener.com" # the base hostname & protocol for your site
+google_analytics: "UA-XXXXXXXX-X"
+
+github: [metadata]
+
+# User Settings
+username: 张京
+user_description: 软件爱好者
+disqus_username: fengerzh
+
+# Social Media
+# Remove the item if you don't need it
 github_username: fengerzh
+#facebook_username: facebook_username
+#twitter_username: twitter_username
+instagram_username: fengerzh
+linkedin_username: buzzzhang
+#medium_username: medium_username
+
+# Build settings
 markdown: kramdown
-theme: minima
+highlighter: rouge
+permalink: /:title/
+
+# Plugins
 plugins:
-  - jekyll-feed
+  - jemoji
+#  - jekyll-feed
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: 首页
+    url: /
+  - title: 关于
+    url: /about/
+  - title: 联系
+    url: /contact/
+
+# Exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']

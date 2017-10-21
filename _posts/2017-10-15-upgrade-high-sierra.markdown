@@ -2,7 +2,11 @@
 title: 升级High Sierra惊魂记
 layout: post
 date: '2017-10-15 13:27:44'
-categories: osx upgrade
+image: 'https://segmentfault.com/img/bVWEuk?w=1200&h=803'
+category: '运维'
+tags:
+- osx
+- high-sierra
 ---
 
 之前也升级过很多次操作系统，但从来没有这一次这样不顺利，记下来，也许能帮到遇到类似问题的朋友。
