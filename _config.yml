@@ -1,9 +1,9 @@
-title: 我的技术博客
+title: 日新亭
 email: buzz.zhang@gmail.com
-description: 所有我的技术总结。
+description: 从业二十余载矣，喜技艺，不求精进，不求甚解，精力尚济时辄取新艺以尝，积久亦无大成，惟好此耳。
 baseurl: ''
-url: ''
-twitter_username: jekyllrb
+url: 'http://www.fengerzh.com/'
+twitter_username: ''
 github_username: fengerzh
 markdown: kramdown
 theme: minima
