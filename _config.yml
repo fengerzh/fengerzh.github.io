@@ -5,10 +5,8 @@ title: 日新亭
 email: buzz.zhang@gmail.com
 description: 从业二十余载矣，喜技艺，不求精进，不求甚解，精力尚济时辄取新艺以尝，积久亦无大成，惟好此耳。
 baseurl: ''
-#baseurl: "/jekflix-template" # the subpath of your site, e.g. /blog
 url: 'http://www.fengerzh.com/'
-#url: "https://www.rossener.com" # the base hostname & protocol for your site
-google_analytics: "UA-XXXXXXXX-X"
+google_analytics: "UA-108471968-1"
 
 github: [metadata]
 
@@ -34,7 +32,7 @@ permalink: /:title/
 # Plugins
 plugins:
   - jemoji
-#  - jekyll-feed
+  - jekyll-feed
 
 # Links to include in menu navigation
 # For external links add external: true

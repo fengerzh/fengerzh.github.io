@@ -1,5 +1,6 @@
 ---
 title: 我的nginx锅炉片
+introduction: 我在日常工作中经常会用到的nginx配置片段。
 category: '运维'
 tags:
 - nginx

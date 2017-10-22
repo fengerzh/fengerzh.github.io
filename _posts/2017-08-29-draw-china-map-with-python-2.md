@@ -1,10 +1,11 @@
 ---
 title: 用Python画中国地图（二）
+introduction: 按照中国人口普查数据为地图上色。
 category: '编程'
 tags:
 - python
 - matplotlib
-image: http://m.onegreen.net/maps/Upload_maps/201602/2016021108130635.jpg
+image: https://segmentfault.com/img/bVTTJJ
 ---
 
 在上一篇文章《[用Python画一个中国地图][1]》中，我们简单描述了一下如何用`Python`快速画出一个中国地图的轮廓，似乎没有什么实用价值，这一次我们用实际数据填充它，使它看上去更有意义。
@@ -22,9 +23,10 @@ image: http://m.onegreen.net/maps/Upload_maps/201602/2016021108130635.jpg
 
 在展示结果之前，稍微解释一下。第`2`行`plt.gca`，函数名看上去很诡异，是因为`Python`里大量使用了缩写，这个`gca`就是`Get Current Axes`的缩写，实际上就是要获得当前图形的座标轴。然后我们开始一个循环，把图形文件中各个省的多边形取出来，给它一个颜色，在这里我们统一放上红色，也就是`Red`的缩写`r`，然后把这个多边形放在我们图形的座标轴上，然后就得到了下图：
 
-![clipboard.png](/img/bVTSXY)
+![clipboard.png](https://segmentfault.com/img/bVTSXY)
 
-糟糕，怎么能少了台湾呢？在此郑重声明：**台湾是中华人民共和国不可分割的领土！**加入台湾的`Shape`文件，然后循环一下：
+糟糕，怎么能少了台湾呢？在此郑重声明：**台湾是中华人民共和国不可分割的领土！**
+加入台湾的`Shape`文件，然后循环一下：
 
     m.readshapefile('TWN_adm_shp/TWN_adm0', 'taiwan', drawbounds=True)
     for nshape, seg in enumerate(m.taiwan):
@@ -32,7 +34,7 @@ image: http://m.onegreen.net/maps/Upload_maps/201602/2016021108130635.jpg
         ax.add_patch(poly)
 
 
-![clipboard.png](/img/bVTS34)
+![clipboard.png](https://segmentfault.com/img/bVTS34)
 
 好了，这下祖国山河一片红，看上去正确多了。
 
@@ -68,7 +70,7 @@ image: http://m.onegreen.net/maps/Upload_maps/201602/2016021108130635.jpg
 
 直接输出，大概是下面这个样子：
 
-![clipboard.png](/img/bVTTkz)
+![clipboard.png](https://segmentfault.com/img/bVTTkz)
 
 ## 渲染
 
@@ -79,14 +81,14 @@ image: http://m.onegreen.net/maps/Upload_maps/201602/2016021108130635.jpg
 然后我们把每个省的数据映射到`colormap`上：
 
     colors[s] = cmap(np.sqrt((pop - vmin) / (vmax - vmin)))[:3]
-    
+
 最后，我们把各个省的颜色描在地图上：
 
     color = rgb2hex(colors[statenames[nshape]])
     poly = Polygon(seg, facecolor=color, edgecolor=color)
 
 
-![clipboard.png](/img/bVTTJJ)
+![clipboard.png](https://segmentfault.com/img/bVTTJJ)
 
 哒哒，我们的全国人口数量热力图就完成了！可以看到河南、四川、广东、山东几个省的颜色比较深，说明这几个省的人口总数最多，而西藏颜色最浅，代表这里的人口总数最少。
 

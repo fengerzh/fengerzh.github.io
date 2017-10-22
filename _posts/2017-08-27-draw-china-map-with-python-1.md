@@ -1,10 +1,11 @@
 ---
 title: 用Python画一个中国地图
+introduction: 利用Basemap的数据描绘一张中国地图。
 category: '编程'
 tags:
 - python
 - matplotlib
-image: http://www.onegreen.net/maps/m/a/china4.jpg
+image: https://segmentfault.com/img/bVTMo8
 ---
 
 ## 为什么是Python
@@ -60,38 +61,38 @@ plt.show()
 前面两行引入相应的库，真正的代码就4行，够简单吧。第1行甚至可以不写，它定义了图的大小。第2行我们创建一个地图，第3行把海岸线画上，第4行显示这个地图，就是这样：
 
 
-![clipboard.png](/img/bVTMis)
+![clipboard.png](https://segmentfault.com/img/bVTMis)
 
 你用`Java`的`4`行代码画一个地图出来？
 
 然后我们开始画上国家，又是1行代码：
 
     m.drawcountries(linewidth=1.5)
-    
+
 就变成了这样：
 
 
-![clipboard.png](/img/bVTMiE)
+![clipboard.png](https://segmentfault.com/img/bVTMiE)
 
 用`Java`可能吗？用`PHP`可能吗？
 
 如果我们想显示中国地图，只需要在创建`Basemap`时指定一下经纬度就行了：
 
     m = Basemap(llcrnrlon=73, llcrnrlat=18, urcrnrlon=135, urcrnrlat=53)
-    
+
 然后就得到了中国地图：
 
 
-![clipboard.png](/img/bVTMmI)
+![clipboard.png](https://segmentfault.com/img/bVTMmI)
 
 看上去有点变形，这是因为我们没有添加任何投影的原因，`Basemap`提供`24`种不同的投影方式，你可以自己一个个试一下，比较常用的是`兰勃特投影`，我们添加一下：
 
     m = Basemap(llcrnrlon=77, llcrnrlat=14, urcrnrlon=140, urcrnrlat=51, projection='lcc', lat_1=33, lat_2=45, lon_0=100)
-    
+
 这次终于看上去比较正常了：
 
 
-![clipboard.png](/img/bVTMnS)
+![clipboard.png](https://segmentfault.com/img/bVTMnS)
 
 
 我们想加上省的边界怎么办呢？`Basemap`缺省的包里没有中国的省区，只有美国的州，毕竟是美国人做的嘛。不过好在世界很大，有专门的国际组织干这事，在[这里][2]你可以下载全世界任何一个国家的行政区划`Shape`文件，然后我们给它加上：
@@ -101,7 +102,7 @@ m.readshapefile('CHN_adm_shp/CHN_adm1', 'states', drawbounds=True)
 然后就得到了下图：
 
 
-![clipboard.png](/img/bVTMo8)
+![clipboard.png](https://segmentfault.com/img/bVTMo8)
 
 再往后，你还可以往图上改颜色啦，写数字啦，这些就留待你研究吧。总之，我想说的是，用`Python`画地图真的超容易。
 
