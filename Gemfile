@@ -28,3 +28,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rouge'
 gem 'jemoji'
+gem 'jekyll-sitemap'

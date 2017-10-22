@@ -240,6 +240,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-admin
+  jekyll-sitemap
   jemoji
   minima (~> 2.0)
   rouge

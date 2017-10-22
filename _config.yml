@@ -33,6 +33,7 @@ permalink: /:title/
 plugins:
   - jemoji
   - jekyll-feed
+  - jekyll-sitemap
 
 # Links to include in menu navigation
 # For external links add external: true
