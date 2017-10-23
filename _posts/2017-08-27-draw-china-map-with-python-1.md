@@ -1,11 +1,11 @@
 ---
 title: 用Python画一个中国地图
 introduction: 利用Basemap的数据描绘一张中国地图。
-category: '编程'
+category: 编程
 tags:
 - python
 - matplotlib
-image: https://segmentfault.com/img/bVTMo8
+image: http://oy8a1lurl.bkt.clouddn.com/map-1.png
 ---
 
 ## 为什么是Python

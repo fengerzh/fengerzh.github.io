@@ -4,8 +4,8 @@ description: 由于Apple在High Sierra操作系统中引入了新的APFS，从�
 introduction: 由于Apple在High Sierra操作系统中引入了新的APFS，从而导致各种问题。
 layout: post
 date: '2017-10-15 13:27:44'
-image: 'https://segmentfault.com/img/bVWEuk?w=1200&h=803'
-category: '运维'
+image: http://oy8a1lurl.bkt.clouddn.com/high-sierra.png
+category: 运维
 tags:
 - osx
 - high-sierra

@@ -20,6 +20,8 @@ GEM
     execjs (2.7.0)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
+    fastimage (1.6.8)
+      addressable (~> 2.3, >= 2.3.5)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
     gemoji (3.0.0)
@@ -113,6 +115,10 @@ GEM
     jekyll-optional-front-matter (0.2.0)
       jekyll (~> 3.0)
     jekyll-paginate (1.1.0)
+    jekyll-picture-tag (0.3.0)
+      fastimage (~> 1.6.4)
+      jekyll (< 4)
+      mini_magick (~> 3.8.0)
     jekyll-readme-index (0.1.0)
       jekyll (~> 3.0)
     jekyll-redirect-from (0.12.1)
@@ -181,6 +187,8 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
     mercenary (0.3.6)
+    mini_magick (3.8.1)
+      subexec (~> 0.2.1)
     mini_portile2 (2.3.0)
     minima (2.1.1)
       jekyll (~> 3.3)
@@ -224,6 +232,7 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
+    subexec (0.2.3)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thread_safe (0.3.6)
@@ -240,6 +249,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-admin
+  jekyll-picture-tag
   jekyll-sitemap
   jemoji
   minima (~> 2.0)

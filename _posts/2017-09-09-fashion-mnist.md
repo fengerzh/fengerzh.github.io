@@ -1,11 +1,11 @@
 ---
 title: 快速尝试时装界的MNIST数据库
 introduction: 时尚MNIST数据库是用来检测图像识别能力的工具。
-category: '编程'
+category: 编程
 tags:
 - python
 - pandas
-image: http://ksassets.timeincuk.net/wp/uploads/sites/46/2016/10/Spring-summer-2017-fashion-trends-1920x1080.jpg
+image: http://oy8a1lurl.bkt.clouddn.com/fashion.jpg
 ---
 
 > 这篇文章的目的远远不是最优解，只是希望能帮助初学者快速上手，了解如何快速建立一个模型并评估它的成绩。

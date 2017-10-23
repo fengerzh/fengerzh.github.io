@@ -1,11 +1,11 @@
 ---
 title: 用Python画中国地图（二）
 introduction: 按照中国人口普查数据为地图上色。
-category: '编程'
+category: 编程
 tags:
 - python
 - matplotlib
-image: https://segmentfault.com/img/bVTTJJ
+image: http://oy8a1lurl.bkt.clouddn.com/map-2.png
 ---
 
 在上一篇文章《[用Python画一个中国地图][1]》中，我们简单描述了一下如何用`Python`快速画出一个中国地图的轮廓，似乎没有什么实用价值，这一次我们用实际数据填充它，使它看上去更有意义。
