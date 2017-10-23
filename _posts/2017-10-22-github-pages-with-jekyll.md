@@ -1,6 +1,6 @@
 ---
 title: 在Github Pages上建立Jekyll博客
-image: https://oy8a1lurl.bkt.clouddn.com/github-jekyll.png
+image: http://oy8a1lurl.bkt.clouddn.com/github-jekyll.png
 category: 运维
 tags:
 - github-pages
