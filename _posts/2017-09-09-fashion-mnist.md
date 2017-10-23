@@ -5,7 +5,7 @@ category: 编程
 tags:
 - python
 - pandas
-image: http://oy8a1lurl.bkt.clouddn.com/fashion.jpg
+image: https://oy8a1lurl.bkt.clouddn.com/fashion.jpg
 ---
 
 > 这篇文章的目的远远不是最优解，只是希望能帮助初学者快速上手，了解如何快速建立一个模型并评估它的成绩。

@@ -4,7 +4,7 @@ introduction: 慢sql是影响系统性能的重要因素，必须解决好这个
 category: 运维
 tags:
 - mysql
-image: http://oy8a1lurl.bkt.clouddn.com/mysql.jpg
+image: https://oy8a1lurl.bkt.clouddn.com/mysql.jpg
 ---
 
 之前一直依赖惯了通过`mysql`慢查询文本日志来解决问题，这次遇到的情况是无法访问文本日志，只能在`mysql`客户端里鼓捣，经过一番周折之后，终于顺利解决问题，原先一个页面的首字节返回时间长达24秒，经过优化后缩短为1秒。以下记录操作步骤。
