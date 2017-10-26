@@ -5,7 +5,7 @@ category: 编程
 tags:
 - python
 - matplotlib
-image: http://oy8a1lurl.bkt.clouddn.com/map-1.png
+image: https://res.cloudinary.com/fengerzh/image/upload/map-1_rffc56.png
 ---
 
 ## 为什么是Python

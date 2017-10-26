@@ -15,8 +15,8 @@ layout: main
                 {% if post.image %}
                     <div class="cover">
                         {% include new-post-tag.html date=post.date %}
-                        <a href="{{ post.url | prepend: site.baseurl }}" {%if isnewpost %}class="new-post"{% endif %}>
-                            <img src="assets/img/placeholder.png" data-url="{{ post.image }}-homepage" class="preload">
+                        <a href="{{ post.url | prepend: site.baseurl }}" {% if isnewpost %}class="new-post"{% endif %} >
+                            <img src="assets/img/placeholder.png" data-url="{{ post.image | replace: "upload/", "upload/c_fill,h_200,w_300/" }}" class="preload" >
                         </a>
                     </div>
                 {% endif %}
@@ -35,7 +35,7 @@ layout: main
                     </a>
                     <div class="tags">
                         {% for tag in post.tags %}
-                            <a href="{{ site.baseurl}}/tags/#{{tag | slugify }}">{{ tag }}</a>
+                            <a href="{{ site.baseurl }}/tags/#{{tag | slugify }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
                 </div>

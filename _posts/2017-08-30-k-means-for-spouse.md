@@ -5,7 +5,7 @@ category: 编程
 tags:
 - python
 - scikit-learn
-image: http://oy8a1lurl.bkt.clouddn.com/k-means.png
+image: https://res.cloudinary.com/fengerzh/image/upload/k-means_xvww4l.png
 ---
 
 一年一度的中国情人节又到了，广大单身狗们是不是又在发愁自己的终身大事呢？不要慌，今年有机器学习的各种算法来帮大家，我们在这里挑一款比较简单的叫做**k均值聚类**的算法给大家做一个示范。
