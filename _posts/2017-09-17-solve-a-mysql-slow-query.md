@@ -14,6 +14,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 ```sql
     show variables like '%slow%';
 ```
+
 |---------------------------+-------------------------------------------|
 | Variable_name             | Value                                     |
 |---------------------------+-------------------------------------------|
@@ -28,6 +29,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 ```sql
     show variables like '%long%';
 ```
+
 |----------------------------------------------------------+----------|
 | Variable_name                                            | Value    |
 |----------------------------------------------------------+----------|
@@ -42,6 +44,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 ```sql
     show variables like '%log_output%';
 ```
+
 |---------------+-------|
 | Variable_name | Value |
 |---------------+-------|
@@ -53,6 +56,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
     use mysql;
     show tables;
 ```
+
 |---------------------------|
 | Tables_in_mysql           |
 |---------------------------|
@@ -93,6 +97,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 ```sql
     desc slow_log;
 ```
+
 |----------------+---------------------+------+-----+----------------------+--------------------------------|
 | Field          | Type                | Null | Key | Default              | Extra                          |
 |----------------+---------------------+------+-----+----------------------+--------------------------------|
@@ -116,6 +121,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 ```sql
     select query_time, rows_sent, rows_examined, db from mysql.slow_log where query_time > 10 and rows_sent < 100 limit 10;
 ```
+
 |-----------------+-----------+---------------+-------|
 | query_time      | rows_sent | rows_examined | db    |
 |-----------------+-----------+---------------+-------|
@@ -143,6 +149,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 ```sql
     show index from b;
 ```
+
 |---------------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------|
 | Table         | Non_unique | Key_name   | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
 |---------------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------|
@@ -159,6 +166,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 ```sql
     show index from b;
 ```
+
 |---------------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------|
 | Table         | Non_unique | Key_name   | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
 |---------------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------|
