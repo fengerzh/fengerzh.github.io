@@ -21,9 +21,9 @@ image: https://res.cloudinary.com/fengerzh/image/upload/map-1_rffc56.png
 ## Pandas
 
 第二神器是`Pandas`。如果我让你读取一个`csv`文件，然后求每一列数据的平均值，最大值，最小值，方差，用`Java`或`PHP`怎么做？你首先要`fopen`一个文件，然后一行一行读进来，再给它整个数据结构，然后弄个循环计算，最后你可能还要`fclose`这个文件。总之代码一坨，麻烦死。而`Python`语言因为有`Pandas`这个神器，一行代码搞定：
-
+```python
     df = pd.read_csv('a.csv')
-
+```
 行了，从此以后，`df`就是这个`DataFrame`，它本身就是一个强大的数据结构，也可以把它理解成`mysql`数据库中的一张表吧，各种增删改查，求总和，求平均都是一行代码的事情。所以有这样强大的库，研究人员有什么理由选择`Java`？
 
 ## scikit-learn
@@ -39,15 +39,15 @@ image: https://res.cloudinary.com/fengerzh/image/upload/map-1_rffc56.png
 先安装相应的组件。我假定你已经都安装好了`Python`以及`Jupyter`等等。如果没有安装的话，就去尝试一下`brew install python3`和`brew install jupyter`吧，网上有很多教程。
 
 然后你需要用`pip3 install`很多我们下面可能需要用到的库。但是因为我们要用一个叫做`Basemap`的库，而这个库没有办法用简单的`pip3 install`安装，所以稍多两个步骤：
-
+```
     brew install geos
     pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
-
+```
 ## 开始画图
 
 启动`Jupyter`之后，我们还是本着从最简单的代码开始。先画一个世界地图：
 
-```
+```python
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
 
@@ -66,9 +66,9 @@ plt.show()
 你用`Java`的`4`行代码画一个地图出来？
 
 然后我们开始画上国家，又是1行代码：
-
+```python
     m.drawcountries(linewidth=1.5)
-
+```
 就变成了这样：
 
 
@@ -77,18 +77,18 @@ plt.show()
 用`Java`可能吗？用`PHP`可能吗？
 
 如果我们想显示中国地图，只需要在创建`Basemap`时指定一下经纬度就行了：
-
+```python
     m = Basemap(llcrnrlon=73, llcrnrlat=18, urcrnrlon=135, urcrnrlat=53)
-
+```
 然后就得到了中国地图：
 
 
 ![clipboard.png](https://segmentfault.com/img/bVTMmI)
 
 看上去有点变形，这是因为我们没有添加任何投影的原因，`Basemap`提供`24`种不同的投影方式，你可以自己一个个试一下，比较常用的是`兰勃特投影`，我们添加一下：
-
+```python
     m = Basemap(llcrnrlon=77, llcrnrlat=14, urcrnrlon=140, urcrnrlat=51, projection='lcc', lat_1=33, lat_2=45, lon_0=100)
-
+```
 这次终于看上去比较正常了：
 
 
@@ -96,9 +96,9 @@ plt.show()
 
 
 我们想加上省的边界怎么办呢？`Basemap`缺省的包里没有中国的省区，只有美国的州，毕竟是美国人做的嘛。不过好在世界很大，有专门的国际组织干这事，在[这里][2]你可以下载全世界任何一个国家的行政区划`Shape`文件，然后我们给它加上：
-
+```python
 m.readshapefile('CHN_adm_shp/CHN_adm1', 'states', drawbounds=True)
-
+```
 然后就得到了下图：
 
 

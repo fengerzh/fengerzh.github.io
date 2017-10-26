@@ -11,9 +11,9 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 
 ### 设置
 首先，看一下慢查询日志有没有开：
-
+```sql
     show variables like '%slow%';
-
+```
 |---------------------------+-------------------------------------------|
 | Variable_name             | Value                                     |
 |---------------------------+-------------------------------------------|
@@ -25,9 +25,9 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 |---------------------------+-------------------------------------------|
 
 第4行为ON，说明已经开了，如果没有开的话，就先开一下吧。
-
+```sql
     show variables like '%long%';
-
+```
 |----------------------------------------------------------+----------|
 | Variable_name                                            | Value    |
 |----------------------------------------------------------+----------|
@@ -39,9 +39,9 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 |----------------------------------------------------------+----------|
 
 第1行说明慢查询门槛值是1秒，也就是说只要任意一个查询时间超过了1秒的就会被记录，如果你觉得这个值有点太低，也可以改为5秒或者10秒，看你觉得多长时间的一个查询是不可接受的。
-
+```sql
     show variables like '%log_output%';
-
+```
 |---------------+-------|
 | Variable_name | Value |
 |---------------+-------|
@@ -49,10 +49,10 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 |---------------+-------|
 
 这里比较关键，log的输出方式是`TABLE`，才能把结果记录在数据库表中。
-
+```sql
     use mysql;
     show tables;
-
+```
 |---------------------------|
 | Tables_in_mysql           |
 |---------------------------|
@@ -90,9 +90,9 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 |---------------------------|
 
 这里有一个表`slow_log`，它就是存储我们的慢查询日志的地方了。
-
+```sql
     desc slow_log;
-
+```
 |----------------+---------------------+------+-----+----------------------+--------------------------------|
 | Field          | Type                | Null | Key | Default              | Extra                          |
 |----------------+---------------------+------+-----+----------------------+--------------------------------|
@@ -113,9 +113,9 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 ### 分析
 
 在`slow_log`表中，`query_time`是我们最关心的：
-
+```sql
     select query_time, rows_sent, rows_examined, db from mysql.slow_log where query_time > 10 and rows_sent < 100 limit 10;
-
+```
 |-----------------+-----------+---------------+-------|
 | query_time      | rows_sent | rows_examined | db    |
 |-----------------+-----------+---------------+-------|
@@ -132,17 +132,17 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 |-----------------+-----------+---------------+-------|
 
 可以看到有很多次查询虽然只返回15条数据，而耗时竟然长达17秒！是可忍，孰不可忍！我们先只取第1条数据看一下：
-
+```sql
     select sql_text from mysql.slow_log order by start_time desc limit 1;
-
+```
 结果就是这条语句：
-
+```sql
     select * from a left join b on b.parentid=a.id LEFT join d on d.memberid=b.memberid  limit 0, 15;
-
+```
 就是这么一条简单的sql语句，怎么就会需要17秒呢？我们首先怀疑的就是有没有加索引，索引不需要在每个字段上加，但是这里的查询关系上必须有，比如`a.id`, `b.parentid`, `d.memberid`, `b.memberid`。
-
+```sql
     show index from b;
-
+```
 |---------------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------|
 | Table         | Non_unique | Key_name   | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
 |---------------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------|
@@ -152,13 +152,13 @@ image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
 不出所料，果然只在主键上加了索引，而关键的`parentid`没有索引。
 
 ### 添加索引
-
+```sql
     alter table b add index b_parent (parentid);
-
+```
 再次查看索引：
-
+```sql
     show index from b;
-
+```
 |---------------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------|
 | Table         | Non_unique | Key_name   | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
 |---------------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------|

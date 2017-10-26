@@ -11,7 +11,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/boilerplate_gudueg.jpg
 
 ### gzip压缩
 
-```
+```nginx
         gzip on;
         gzip_min_length 1k;
         gzip_buffers 16 64k;
@@ -25,7 +25,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/boilerplate_gudueg.jpg
 
 ### expire header
 
-```
+```nginx
         location ~* \.(css|js|gif|ico|jpg|png|svg|woff|ttf|eot|woff2)$ {
             expires 365d;
         }
@@ -35,7 +35,7 @@ image: https://res.cloudinary.com/fengerzh/image/upload/boilerplate_gudueg.jpg
 
 ### 跨域
 
-```
+```nginx
     location /somewhere/ {
         if ($request_method=OPTIONS) {
         	add_header Access-Control-Allow-Origin "$http_origin";
