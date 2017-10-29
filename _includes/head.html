@@ -43,7 +43,7 @@
     <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
 
     <!-- Windows 8 Tile Icons -->
-    <meta name="application-name" content="{{ site.username }} Blog">
+    <meta name="application-name" content="{{ site.title }}">
     <meta name="msapplication-TileColor" content="#0562DC">
     <meta name="msapplication-square70x70logo" content="smalltile.png" />
     <meta name="msapplication-square150x150logo" content="mediumtile.png" />
@@ -51,6 +51,10 @@
     <meta name="msapplication-square310x310logo" content="largetile.png" />
 
     <link rel="manifest" href="/manifest.json">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
 
     <!-- Android Lolipop Theme Color -->
     <meta name="theme-color" content="{{ page.color }}">
