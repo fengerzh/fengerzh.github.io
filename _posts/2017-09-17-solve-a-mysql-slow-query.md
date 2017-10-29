@@ -4,7 +4,7 @@ introduction: 慢sql是影响系统性能的重要因素，必须解决好这个
 category: 运维
 tags:
 - mysql
-image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.jpg
+image: https://res.cloudinary.com/fengerzh/image/upload/mysql_pdvgkr.webp
 color: black
 ---
 

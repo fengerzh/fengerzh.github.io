@@ -5,7 +5,7 @@ category: 编程
 tags:
 - python
 - pandas
-image: https://res.cloudinary.com/fengerzh/image/upload/fashion_lpny7g.jpg
+image: https://res.cloudinary.com/fengerzh/image/upload/fashion_lpny7g.webp
 color: black
 ---
 
