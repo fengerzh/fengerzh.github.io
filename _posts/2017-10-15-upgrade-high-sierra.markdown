@@ -9,6 +9,7 @@ category: 运维
 tags:
 - osx
 - high-sierra
+color: black
 ---
 
 之前也升级过很多次操作系统，但从来没有这一次这样不顺利，记下来，也许能帮到遇到类似问题的朋友。

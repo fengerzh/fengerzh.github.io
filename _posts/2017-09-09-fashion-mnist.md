@@ -6,6 +6,7 @@ tags:
 - python
 - pandas
 image: https://res.cloudinary.com/fengerzh/image/upload/fashion_lpny7g.jpg
+color: black
 ---
 
 > 这篇文章的目的远远不是最优解，只是希望能帮助初学者快速上手，了解如何快速建立一个模型并评估它的成绩。

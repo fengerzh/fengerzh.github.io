@@ -5,6 +5,7 @@ category: 运维
 tags:
 - nginx
 image: https://res.cloudinary.com/fengerzh/image/upload/boilerplate_gudueg.jpg
+color: black
 ---
 
 很多情况下，我们不需要了解事物的详情，只要知道这样做有效就够了，这种情况下我们就会用到`boilerplate`，中文俗称『**锅炉片**』。所谓锅炉片，其实就是一大段代码，你也不用管为什么这样，你只需要在用到的时候拷来拷去就行了。当然，如果你愿意钻研，非要琢磨清楚这一大段代码当中到底包含了什么意思，你也可以学到不少东西，不过不求甚解的话，也没有人指责你。

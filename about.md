@@ -3,6 +3,7 @@ layout: page
 title: About
 description: Some description.
 permalink: /about/
+color: black
 ---
 
 <img itemprop="image" class="img-rounded" src="https://sfault-avatar.b0.upaiyun.com/439/654/439654051-58781bd01ba83_huge256" alt="Your Name">

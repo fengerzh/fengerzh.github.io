@@ -6,6 +6,7 @@ tags:
 - python
 - matplotlib
 image: https://res.cloudinary.com/fengerzh/image/upload/map-1_rffc56.png
+color: black
 ---
 
 ## 为什么是Python

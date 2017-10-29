@@ -3,6 +3,7 @@ layout: page
 title: Contact
 description: Let's talk.
 permalink: /contact/
+color: black
 ---
 
 <style type="text/css" media="screen">
