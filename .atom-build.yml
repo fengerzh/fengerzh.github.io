@@ -1,0 +1,18 @@
+cmd: "gulp"
+name: "gulp default"
+args:
+    - "default"
+sh: true
+targets:
+    js:
+        cmd: "gulp"
+        name: "gulp js"
+        args:
+            - "js"
+        sh: true
+    stylus:
+        cmd: "gulp"
+        name: "gulp stylus"
+        args:
+            - "stylus"
+        sh: true
