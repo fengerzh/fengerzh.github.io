@@ -38,7 +38,7 @@ color: black
 
 ```nginx
     location /somewhere/ {
-        if ($request_method=OPTIONS) {
+        if ($request_method = OPTIONS) {
         	add_header Access-Control-Allow-Origin "$http_origin";
         	add_header Access-Control-Allow-Credentials "true";
         	add_header Access-Control-Allow-Methods "GET, POST, OPTIONS";
@@ -47,7 +47,7 @@ color: black
         	add_header Content-Type text/plain;
         	return 200;
     	}
-        if ($request_method=POST) {
+        if ($request_method = POST) {
         	add_header Access-Control-Allow-Origin "$http_origin";
         	add_header Access-Control-Allow-Credentials "true";
         }
