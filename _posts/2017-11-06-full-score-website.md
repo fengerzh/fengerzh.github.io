@@ -1,6 +1,6 @@
 ---
 title: 如何打造一个全满分网站
-image: http://res.cloudinary.com/fengerzh/image/upload/100_qjfwyi.jpg
+image: https://res.cloudinary.com/fengerzh/image/upload/100_qjfwyi.jpg
 category: 编程
 tags:
 - pwa
