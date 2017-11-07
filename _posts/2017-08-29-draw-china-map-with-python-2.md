@@ -5,7 +5,7 @@ category: 编程
 tags:
 - python
 - matplotlib
-image: https://res.cloudinary.com/fengerzh/image/upload/map-2_tvls47.webp
+image: https://res.cloudinary.com/fengerzh/image/upload/map-2_tvls47.jpg
 color: black
 ---
 

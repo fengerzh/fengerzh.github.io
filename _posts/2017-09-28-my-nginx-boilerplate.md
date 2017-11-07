@@ -4,7 +4,7 @@ introduction: 我在日常工作中经常会用到的nginx配置片段。
 category: 运维
 tags:
 - nginx
-image: https://res.cloudinary.com/fengerzh/image/upload/boilerplate_gudueg.webp
+image: https://res.cloudinary.com/fengerzh/image/upload/boilerplate_gudueg.jpg
 color: black
 ---
 

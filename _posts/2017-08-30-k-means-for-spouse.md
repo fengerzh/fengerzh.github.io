@@ -5,7 +5,7 @@ category: 编程
 tags:
 - python
 - scikit-learn
-image: https://res.cloudinary.com/fengerzh/image/upload/k-means_xvww4l.webp
+image: https://res.cloudinary.com/fengerzh/image/upload/k-means_xvww4l.jpg
 color: black
 ---
 
