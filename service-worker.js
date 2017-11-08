@@ -1,7 +1,6 @@
-var cacheName = 'fengerzh';
+var cacheName = 'v3';
 var filesToCache = [
   '/',
-  '/index.html',
   '/assets/js/main.js',
   '/assets/css/main.css',
   '/assets/img/placeholder.png',
