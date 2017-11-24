@@ -1,4 +1,6 @@
 (function( $, window, undefined ) {
+  var isPushEnabled = false;
+
   // Menu
   $("#menu").click(function() {
     $("body").addClass("push-menu-to-right");
@@ -57,7 +59,67 @@
       updateURL: false, // Boolean. Whether or not to update the URL with the anchor hash on scroll
   });
 
+  function subscribe() {
+    var pushButton = document.querySelector('.js-push-button');
+    pushButton.disabled = true;
+
+    navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+      serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true}).then(function(subscription) {
+        isPushEnabled = true;
+        pushButton.textContent = 'Disable Push Messages';
+        pushButton.disabled = false;
+
+          // return sendSubscriptionToServer(subscription);
+      }).catch(function(e) {
+        if (Notification.permission === 'denied') {
+          // window.Demo.debug.log('Permission for Notifications was denied');
+          pushButton.disabled = true;
+        } else {
+          // window.Demo.debug.log('Unable to subscribe to push.', e);
+          pushButton.disabled = false;
+          pushButton.textContent = 'Enable Push Messages';
+        }
+      });
+    });
+  }
+
+  function initialiseState() {
+    navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+      // 测试
+      var title = "hello";
+      var options = {
+        "body": "Did you make a $1,000,000 purchase at Dr. Evil...",
+        "icon": "assets/img/ccard.png",
+        "vibrate": [200, 100, 200, 100, 200, 100, 400],
+        "tag": "request",
+        "actions": [
+          { "action": "yes", "title": "Yes", "icon": "assets/img/yes.png" },
+          { "action": "no", "title": "No", "icon": "assets/img/no.png" }
+        ]
+      };
+      serviceWorkerRegistration.showNotification(title, options);
+
+      // 获取当前订阅状态
+      serviceWorkerRegistration.pushManager.getSubscription().then(function(subscription) {
+        var pushButton = document.querySelector('.js-push-button');
+        pushButton.disabled = false;
+        if (!subscription) {
+          return;
+        }
+      });
+    });
+  }
+
+  var pushButton = document.querySelector('.js-push-button');
+  pushButton.addEventListener('click', function() {
+    if (isPushEnabled) {
+      unsubscribe();
+    } else {
+      subscribe();
+    }
+  });
+
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js');
+    navigator.serviceWorker.register('/service-worker.js').then(initialiseState);
   };
 })( Zepto, window );

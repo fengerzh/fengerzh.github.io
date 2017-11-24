@@ -4,6 +4,11 @@ color: black
 ---
 
 <main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    <p>
+        <button class="js-push-button" disabled>
+          Enable Push Messages
+        </button>
+    </p>
     <div id="grid" class="row flex-grid">
     {% for post in site.posts %}
         <article class="box-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
