@@ -1,6 +1,6 @@
 ---
 title: 快速尝试时装界的MNIST数据库
-introduction: 时尚MNIST数据库是用来检测图像识别能力的工具。
+description: 时尚MNIST数据库是用来检测图像识别能力的工具。
 category: 编程
 tags:
 - python

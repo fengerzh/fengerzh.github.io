@@ -1,6 +1,6 @@
 ---
 title: 解决一个mysql慢查询
-introduction: 慢sql是影响系统性能的重要因素，必须解决好这个问题。
+description: 慢sql是影响系统性能的重要因素，必须解决好这个问题。
 category: 运维
 tags:
 - mysql

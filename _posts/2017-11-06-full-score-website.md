@@ -5,7 +5,7 @@ category: 编程
 tags:
 - pwa
 - lighthouse
-introduction: 追求极致，步步完善，直到使一个网站达到完美的过程。
+description: 追求极致，步步完善，直到使一个网站达到完美的过程。
 color: black
 ---
 

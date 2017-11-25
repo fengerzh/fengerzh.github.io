@@ -1,6 +1,6 @@
 ---
 title: "【七夕福利】k均值聚类算法告诉你到哪里找对象"
-introduction: 用k均值算法进行一个简单的数据分析。
+description: 用k均值算法进行一个简单的数据分析。
 category: 编程
 tags:
 - python

@@ -6,7 +6,7 @@ tags:
 - github-pages
 - jekyll
 - ruby
-introduction: Github Pages与Jekyll的完美配合使你可以直接用Markdown语言撰写博客。
+description: Github Pages与Jekyll的完美配合使你可以直接用Markdown语言撰写博客。
 color: black
 ---
 

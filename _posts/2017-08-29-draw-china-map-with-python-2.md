@@ -1,6 +1,6 @@
 ---
 title: 用Python画中国地图（二）
-introduction: 按照中国人口普查数据为地图上色。
+description: 按照中国人口普查数据为地图上色。
 category: 编程
 tags:
 - python
