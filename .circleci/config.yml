@@ -5,4 +5,9 @@ jobs:
        - image: circleci/ruby:latest
      steps:
        - checkout
+       - run: bundle exec jekyll build
+       - run: bundle exec htmlproofer ./_site --allow-hash-href --check-favicon --check-html --disable-external
        - run: echo "hello world"
+       - deploy:
+         command:
+           - rsync -va --delete ./_site username@my-website:/var/html
