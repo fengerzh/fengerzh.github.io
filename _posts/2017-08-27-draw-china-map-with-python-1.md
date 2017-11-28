@@ -62,7 +62,7 @@ plt.show()
 前面两行引入相应的库，真正的代码就4行，够简单吧。第1行甚至可以不写，它定义了图的大小。第2行我们创建一个地图，第3行把海岸线画上，第4行显示这个地图，就是这样：
 
 
-![clipboard.png](https://segmentfault.com/img/bVTMis)
+![clipboard.png](https://segmentfault.com/img/bVTMis){:alt="picture"}
 
 你用`Java`的`4`行代码画一个地图出来？
 
@@ -73,7 +73,7 @@ plt.show()
 就变成了这样：
 
 
-![clipboard.png](https://segmentfault.com/img/bVTMiE)
+![clipboard.png](https://segmentfault.com/img/bVTMiE){:alt="picture"}
 
 用`Java`可能吗？用`PHP`可能吗？
 
@@ -84,7 +84,7 @@ plt.show()
 然后就得到了中国地图：
 
 
-![clipboard.png](https://segmentfault.com/img/bVTMmI)
+![clipboard.png](https://segmentfault.com/img/bVTMmI){:alt="picture"}
 
 看上去有点变形，这是因为我们没有添加任何投影的原因，`Basemap`提供`24`种不同的投影方式，你可以自己一个个试一下，比较常用的是`兰勃特投影`，我们添加一下：
 ```python
@@ -93,7 +93,7 @@ plt.show()
 这次终于看上去比较正常了：
 
 
-![clipboard.png](https://segmentfault.com/img/bVTMnS)
+![clipboard.png](https://segmentfault.com/img/bVTMnS){:alt="picture"}
 
 
 我们想加上省的边界怎么办呢？`Basemap`缺省的包里没有中国的省区，只有美国的州，毕竟是美国人做的嘛。不过好在世界很大，有专门的国际组织干这事，在[这里][2]你可以下载全世界任何一个国家的行政区划`Shape`文件，然后我们给它加上：
@@ -103,7 +103,7 @@ m.readshapefile('CHN_adm_shp/CHN_adm1', 'states', drawbounds=True)
 然后就得到了下图：
 
 
-![clipboard.png](https://segmentfault.com/img/bVTMo8)
+![clipboard.png](https://segmentfault.com/img/bVTMo8){:alt="picture"}
 
 再往后，你还可以往图上改颜色啦，写数字啦，这些就留待你研究吧。总之，我想说的是，用`Python`画地图真的超容易。
 
