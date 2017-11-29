@@ -7,7 +7,7 @@ jobs:
        - checkout
        - run: bundle install
        - run: bundle exec jekyll build
-       - run: bundle exec htmlproofer ./_site --allow-hash-href --check-favicon --check-html --disable-external
+       - run: bundle exec htmlproofer ./_site --allow-hash-href --check-html --disable-external
        - run: echo "Build finished!"
 workflows:
   version: 2
