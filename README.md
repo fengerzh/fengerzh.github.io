@@ -3,13 +3,14 @@
     <img alt="zhangjing" src="https://sfault-avatar.b0.upaiyun.com/439/654/439654051-58781bd01ba83_huge256" style="border-radius: 500px;" />
   </a>
 </p>
-<p align="center">
-  <a title="circle" href="https://circleci.com/gh/fengerzh"><img src="https://circleci.com/gh/fengerzh/fengerzh.github.io.svg?style=svg"></a>
-</p>
 
 # 日新亭模板
 
-[![Join the chat at https://gitter.im/fengerzh-github-io/Lobby](https://badges.gitter.im/fengerzh-github-io/Lobby.svg)](https://gitter.im/fengerzh-github-io/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+想了解与此模板相关的任何问题，请点此链接：[![Join the chat at https://gitter.im/fengerzh-github-io/Lobby](https://badges.gitter.im/fengerzh-github-io/Lobby.svg)](https://gitter.im/fengerzh-github-io/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+编译结果：
+[![Build Status](https://semaphoreci.com/api/v1/fengerzh/fengerzh-github-io/branches/master/shields_badge.svg)](https://semaphoreci.com/fengerzh/fengerzh-github-io)
+[![CircleCI](https://circleci.com/gh/fengerzh/fengerzh.github.io.svg?style=svg)](https://circleci.com/gh/fengerzh/fengerzh.github.io)
 
 日新亭模板是一套基于`Jekyll`框架的模板，目前运行在[日新亭](https://www.fengerzh.com)网站上。日新亭网站基于[Github Pages](https://pages.github.com/)自动发布，`https`技术采用[CloudFlare](http://cloudflare.com/)方案，图床采用[Cloudinary](https://cloudinary.com/)自动压缩方案，采用[CircleCI](https://circleci.com/)进行持续集成。
 
