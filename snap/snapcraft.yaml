@@ -1,0 +1,20 @@
+name: fengerzh
+version: '0.1.1'
+summary: A Jekyll blog template.
+description: |
+  This is my-snap's description. You have a paragraph or two to tell the
+  most important story about your snap. Keep it under 100 words though,
+  we live in tweetspace and your description wants to look good in the snap
+  store.
+
+grade: devel
+confinement: devmode
+
+apps:
+  fengerzh:
+    command: bundle exec jekyll serve
+
+parts:
+  fengerzh:
+    plugin: ruby
+    use-bundler: True
