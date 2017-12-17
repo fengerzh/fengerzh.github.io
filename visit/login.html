@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
+    <script type="text/javascript">
+      var config = {
+        apiKey: "AIzaSyBHQjxlE2uaJ0janHVGUMsXpPGggkh-XrQ",
+        authDomain: "fengerzhcom.firebaseapp.com",
+        databaseURL: "https://fengerzhcom.firebaseio.com",
+        projectId: "fengerzhcom",
+        storageBucket: "fengerzhcom.appspot.com",
+        messagingSenderId: "84597767663"
+      };
+      firebase.initializeApp(config);
+
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'index.html',
+        signInOptions: [
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        ],
+        // Terms of service url.
+        // tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+  </head>
+  <body>
+    <div id="firebaseui-auth-container"></div>
+  </body>
+</html>

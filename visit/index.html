@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase-messaging.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
+    <script type="text/javascript">
+      var config = {
+        apiKey: "AIzaSyBHQjxlE2uaJ0janHVGUMsXpPGggkh-XrQ",
+        authDomain: "fengerzhcom.firebaseapp.com",
+        databaseURL: "https://fengerzhcom.firebaseio.com",
+        projectId: "fengerzhcom",
+        storageBucket: "fengerzhcom.appspot.com",
+        messagingSenderId: "84597767663"
+      };
+      firebase.initializeApp(config);
+      var defaultDatabase = firebase.database();
+      var userDataObj = {
+        visitedProvinces: [['Country', 'Popularity']],
+        visitedCountries: [['Country', 'Popularity']]
+      };
+
+      // 用户点击区域时的回调函数
+      function selectHandler(e, mapType) {
+        var found = -1;
+
+        // 在数组中查找
+        if (mapType == 'china') {
+          _.find(userDataObj.visitedProvinces, function(value, index) {
+            if (value[0] == e.region) {
+              // 找到了
+              found = index;
+            }
+          });
+
+          if (found == -1) {
+            // 没有找到，添加
+            userDataObj.visitedProvinces.push([e.region, 200]);
+          } else {
+            // 找到了，删除
+            userDataObj.visitedProvinces.splice(found, 1);
+          }
+        } else {
+          _.find(userDataObj.visitedCountries, function(value, index) {
+            if (value[0] == e.region) {
+              // 找到了
+              found = index;
+            }
+          });
+
+          if (found == -1) {
+            // 没有找到，添加
+            userDataObj.visitedCountries.push([e.region, 200]);
+          } else {
+            // 找到了，删除
+            userDataObj.visitedCountries.splice(found, 1);
+          }
+        }
+        // 重新绘图
+        drawRegionsMap();
+
+        // 保存数据
+        firebase.database().ref('users/' + userDataObj.uid).set(userDataObj);
+      }
+
+      // 绘图函数
+      function drawRegionsMap() {
+        // 设置选项
+        var optionsChina = {
+          region: 'CN',
+          domain: 'CN', // 处理争议地区，设为中国，则所有有争议地区全部算为中国领土
+          colorAxis: null,
+          resolution: 'provinces',
+        };
+        var optionsWorld = {
+        };
+
+        var chartChina = new google.visualization.GeoChart(document.getElementById('china'));
+        var chartWorld = new google.visualization.GeoChart(document.getElementById('world'));
+
+        // 当用户点击省份时，则调用函数处理
+        google.visualization.events.addListener(chartChina, 'regionClick', function (e) {
+          selectHandler(e, 'china');
+        });
+        google.visualization.events.addListener(chartWorld, 'regionClick', function (e) {
+          selectHandler(e, 'world');
+        });
+
+        // 绘图
+        chartChina.draw(google.visualization.arrayToDataTable(userDataObj.visitedProvinces), optionsChina);
+        chartWorld.draw(google.visualization.arrayToDataTable(userDataObj.visitedCountries), optionsWorld);
+      }
+
+      initApp = function() {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // 用户已登录，开始取数据
+            user.getIdToken().then(function(accessToken) {
+              var userData = firebase.database().ref('users/' + user.uid);
+
+              // 初始化Google GeoCharts
+              google.charts.load('current', {
+                'packages':['geochart'],
+                'mapsApiKey': 'AIzaSyCx13-CU1uqE3xQWpx1yxNBujUgnNmVb1Q'
+              });
+
+              // 从Firebase数据库中读取数据
+              userData.on('value', function(snapshot) {
+                var data = snapshot.val();
+                if (data && data.visitedProvinces) {
+                  // 如果LocalStorage已经保存，则取出
+                  userDataObj.visitedProvinces = data.visitedProvinces;
+                }
+                if (data && data.visitedCountries) {
+                  // 如果LocalStorage已经保存，则取出
+                  userDataObj.visitedCountries = data.visitedCountries;
+                }
+                // 初始化用户数据
+                userDataObj.uid = user.uid;
+                userDataObj.displayName = user.displayName;
+                userDataObj.email = user.email;
+                userDataObj.profile_picture = user.photoURL;
+
+                // 页面加载时开始调用绘图函数
+                google.charts.setOnLoadCallback(drawRegionsMap);
+              });
+            });
+          } else {
+            // 用户未登录，跳转到登录页
+            window.location = "login.html";
+          }
+        }, function(error) {
+          console.log(error);
+        });
+      };
+      window.addEventListener('load', function() {
+        initApp()
+      });
+    </script>
+  </head>
+  <body>
+    <div id="china" style="width: 50%; height: 500px; float: left;"></div>
+    <div id="world" style="width: 50%; height: 500px; float: left;"></div>
+    <div id="firebaseui-auth-container"></div>
+  </body>
+</html>
