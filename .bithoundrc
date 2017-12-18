@@ -42,7 +42,8 @@
     "**/extjs/src/**",
     "**/extjs/welcome/**",
     "bower_components/**",
-    "assets/js/**"
+    "assets/js/**",
+    "src/js/**"
   ],
   "test": [
     "**/test/**",
