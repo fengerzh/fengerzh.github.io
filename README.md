@@ -8,6 +8,8 @@
 
 想了解与此模板相关的任何问题，请点此链接：[![Join the chat at https://gitter.im/fengerzh-github-io/Lobby](https://badges.gitter.im/fengerzh-github-io/Lobby.svg)](https://gitter.im/fengerzh-github-io/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+欢迎加入：[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 编译结果：
 [![Build Status](https://semaphoreci.com/api/v1/fengerzh/fengerzh-github-io/branches/master/shields_badge.svg)](https://semaphoreci.com/fengerzh/fengerzh-github-io)
 [![CircleCI](https://circleci.com/gh/fengerzh/fengerzh.github.io.svg?style=svg)](https://circleci.com/gh/fengerzh/fengerzh.github.io)
