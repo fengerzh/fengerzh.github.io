@@ -29,11 +29,14 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:title/
 
+ampdir: /amp
+
 # Plugins
 plugins:
   - jemoji
   - jekyll-feed
   - jekyll-sitemap
+  - amp-jekyll
 
 picture:
   source: assets/images/_fullsize

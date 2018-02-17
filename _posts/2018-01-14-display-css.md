@@ -8,6 +8,7 @@ tags:
 description: 你知道『回』字有四种写法，但你知道display有32种写法吗？
 color: black
 ---
+
 <div class="imageCaption" style="text-align: center; margin-bottom: 20px;">
   <em class="markup--em markup--figure-em">Display. 摄影师：Sunyu 来源：</em>
   <a href="https://unsplash.com/" data-href="https://unsplash.com/" class="markup--anchor markup--figure-anchor" rel="nofollow noopener noopener" target="blank">
@@ -135,7 +136,7 @@ color: black
 
 `grid`布局，中文翻译为`网格布局`。学习`grid`布局有两个重点：一个重点是`grid`布局引入了一个全新的单位：`fr`，它是`fraction`（`分数`）的缩写，所以从此以后，你的兵器库里除了`px`, `em`, `rem`, `百分比`这些常见兵器以及`vw`, `vh`这些新式武器之外，又多了一样旁门暗器`fr`，要想用好`grid`，必须充分掌握`fr`。另一个重点是`斜杠操作符`，这可不是`分数`哦。它表示的是`起始位置`和`结束位置`。比如说`3 / 4`，这可不是`四分之三`的意思，这是指一个元素从第`3`行开始，到第`4`行结束，但又不包括第`4`行。
 
-同样，与`grid`相关联的也有一大堆旁门属性，是在学习`display: grid;`的同时必须掌握的。包括`grid`, `grid-column-start`, `grid-column-end`, `grid-row-start`, `grid-row-end`, `grid-template`, `grid-template-columns`, `grid-template-rows`, `grid-template-areas`, `grid-gap`, `grid-column-gap`, `grid-row-gap`, `grid-auto-columns`, `grid-auto-rows`, `grid-auto-flow`, `grid-column`, `grid-row`。不能详述，关于这个写起来又是一大篇文章。详情还是参考csstrick上[这篇文章][5]，讲得非常细致非常清楚。
+同样，与`grid`相关联的也有一大堆旁门属性，是在学习`display: grid;`的同时必须掌握的。包括`grid`, `grid-column-start`, `grid-column-end`, `grid-row-start`, `grid-row-end`, `grid-template`, `grid-template-columns`, `grid-template-rows`, `grid-template-areas`, `grid-gap`, `grid-column-gap`, `grid-row-gap`, `grid-auto-columns`, `grid-auto-rows`, `grid-auto-flow`, `grid-column`, `grid-row`。不能详述，关于这个写起来又是一大篇文章。详情还是参考 csstrick 上[这篇文章][5]，讲得非常细致非常清楚。
 
 ## <a id="ruby"></a>display: ruby;
 
@@ -153,7 +154,7 @@ color: black
 
 ## display: subgrid;
 
-`2015`年`8`月`6`日，`W3C`的级联样式单（`CSS`）工作组（`Cascading Style Sheets Working Group`）发布了`CSS网格布局模块第一级`（`CSS Grid Layout Module Level 1`）的工作草案。在这个草案里规定了上一节我们讲到的`display: grid;`的方案。而`display: subgrid;`是属于`2017`年`11`月`9`日发布的非正式的[CSS网格布局模块第二级][6]的内容。所以这是一个非常新的草案，并且围绕它的争议从来也没有断过。
+`2015`年`8`月`6`日，`W3C`的级联样式单（`CSS`）工作组（`Cascading Style Sheets Working Group`）发布了`CSS网格布局模块第一级`（`CSS Grid Layout Module Level 1`）的工作草案。在这个草案里规定了上一节我们讲到的`display: grid;`的方案。而`display: subgrid;`是属于`2017`年`11`月`9`日发布的非正式的[CSS 网格布局模块第二级][6]的内容。所以这是一个非常新的草案，并且围绕它的争议从来也没有断过。
 
 `subgrid`总的思想是说大网格里还可以套小网格，互相不影响。但如果`grid`里可以再套`subgrid`的话，那我`subgrid`里还想再套`subgrid`怎么办？`subsubgrid`吗？况且，到底是`grid: subgrid;`还是`display: subgrid;`这个也没有达成共识，关于此一系列的争议，感兴趣的同学可以看看[这篇文章][7]，英语好的可以看[这篇][8]。
 
@@ -227,7 +228,7 @@ color: black
 
 ## display: contents;
 
-这大概是`2018`年年初最令人喜大普达的一件大事了：[Chrome 65版本终于要支持display: contents;了][11]！`Firefox`早就支持了，而`Chrome`直到现在才开始支持，这么重要的特性，它到底有什么功能呢？结果恐怕会令你大失所望。原来的布局是这样的：
+这大概是`2018`年年初最令人喜大普达的一件大事了：[Chrome 65 版本终于要支持 display: contents;了][11]！`Firefox`早就支持了，而`Chrome`直到现在才开始支持，这么重要的特性，它到底有什么功能呢？结果恐怕会令你大失所望。原来的布局是这样的：
 
 ![clipboard.png](https://segmentfault.com/img/bV10Co)
 
@@ -285,16 +286,16 @@ color: black
 
 以上就是在`css`里`display`的`32`种写法。谈了这么多，不知道你记住了多少呢？其实，单纯理解每一个`display`属性的取值都不难，难的是融会贯通，在恰当的地方运用恰当的值，毕竟我们的目的是为了把代码写短，而不是把代码写长。如果你怕记不太清的话，就请你收藏这篇小文，也许将来的某一天，你会用得着。
 
-  [1]: http://www.cnblogs.com/haoqipeng/p/html-display-table.html
-  [2]: http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
-  [3]: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-  [4]: https://segmentfault.com/img/bVGBQg
-  [5]: https://css-tricks.com/snippets/css/complete-guide-grid/
-  [6]: https://drafts.csswg.org/css-grid-2/
-  [7]: https://www.w3cplus.com/css3/why-display-contents-is-not-css-grid-layout-subgrid.html
-  [8]: https://blogs.igalia.com/mrego/2016/02/12/subgrids-thinking-out-loud/
-  [9]: http://www.zhangxinxu.com/wordpress/2010/10/%E6%88%91%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E5%87%A0%E7%A7%8Ddisplaytable-cell%E7%9A%84%E5%BA%94%E7%94%A8/
-  [10]: /img/bV10lS
-  [11]: https://blogs.igalia.com/mrego/2018/01/11/display-contents-is-coming/
-  [12]: https://segmentfault.com/img/bV10Cy
-  [13]: https://segmentfault.com/img/bV10C8
+[1]: http://www.cnblogs.com/haoqipeng/p/html-display-table.html
+[2]: http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+[3]: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+[4]: https://segmentfault.com/img/bVGBQg
+[5]: https://css-tricks.com/snippets/css/complete-guide-grid/
+[6]: https://drafts.csswg.org/css-grid-2/
+[7]: https://www.w3cplus.com/css3/why-display-contents-is-not-css-grid-layout-subgrid.html
+[8]: https://blogs.igalia.com/mrego/2016/02/12/subgrids-thinking-out-loud/
+[9]: http://www.zhangxinxu.com/wordpress/2010/10/%E6%88%91%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E5%87%A0%E7%A7%8Ddisplaytable-cell%E7%9A%84%E5%BA%94%E7%94%A8/
+[10]: https://segmentfault.com/img/bV10lS
+[11]: https://blogs.igalia.com/mrego/2018/01/11/display-contents-is-coming/
+[12]: https://segmentfault.com/img/bV10Cy
+[13]: https://segmentfault.com/img/bV10C8
