@@ -1,4 +1,4 @@
-var cacheName = 'v3';
+var cacheName = 'v4';
 var filesToCache = [
   '/',
   '/assets/js/main.js',
