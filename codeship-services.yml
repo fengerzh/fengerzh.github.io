@@ -1,0 +1,4 @@
+fengerzh:
+  build:
+    image: fengerzh
+    dockerfile: Dockerfile
