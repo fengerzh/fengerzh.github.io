@@ -31,4 +31,3 @@ end
 gem 'rouge', '= 2.2.1'
 gem 'jemoji', '= 0.10.1'
 gem 'jekyll-sitemap', '~> 1.2.0'
-gem 'amp-jekyll', '~> 1.0.2'
