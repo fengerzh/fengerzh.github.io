@@ -39,5 +39,18 @@
     </ul>
     <p><span>日新亭</span>模板：<svg class="love"><use xlink:href="#icon-heart"></use></svg>来自<a href="http://www.rossener.com" target="_blank" class="creator" rel="noopener">Thiago Rossener</a></p>
 </footer>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBHQjxlE2uaJ0janHVGUMsXpPGggkh-XrQ",
+    authDomain: "fengerzhcom.firebaseapp.com",
+    databaseURL: "https://fengerzhcom.firebaseio.com",
+    projectId: "fengerzhcom",
+    storageBucket: "fengerzhcom.appspot.com",
+    messagingSenderId: "84597767663"
+  };
+  firebase.initializeApp(config);
+</script>
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
 {% include stats.html %}
