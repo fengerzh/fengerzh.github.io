@@ -62,6 +62,9 @@
   }
 
   var messaging = firebase.messaging();
+  messaging.usePublicVapidKey(
+    'BCPMmXHYS2_ynQAcVaHiV4p0iYVQnudc-0kD24xPWytY1zFOmvRl7cg6vNoOfjUO8lFHr-OyncRt5UU06G-BUdM'
+  );
 
   // 申请获得推送权限
   messaging
