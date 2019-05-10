@@ -3,7 +3,7 @@ title: 日志洁癖
 image: https://res.cloudinary.com/fengerzh/image/upload/mysophobia_nvjfz7.jpg
 category: 运维
 tags:
-- java
+  - java
 description: 我不但有代码洁癖，并且还有日志洁癖。
 color: black
 ---
@@ -26,7 +26,7 @@ if (a == 0)
 
 当我在`Tomcat`输出的日志里看到这样的警告：
 
-```
+```log
 SLF4J: Class path contains multiple SLF4J bindings
 ```
 
@@ -96,7 +96,7 @@ SLF4J: Class path contains multiple SLF4J bindings
 
 虽然如此，我又遇到了问题：
 
-```
+```log
 SLF4J: Class path contains multiple SLF4J bindings.
 SLF4J: Found binding in [jar:file:/C:/Users/admin/.m2/repository/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: Found binding in [jar:file:/C:/Users/admin/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
@@ -117,6 +117,6 @@ SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
 
 感觉世界重新恢复了秩序。
 
-  [1]: https://blog.csdn.net/zhengqiqiqinqin/article/details/13772369
-  [2]: https://www.oschina.net/question/93435_174549
-  [3]: https://stackoverflow.com/questions/14024756/slf4j-class-path-contains-multiple-slf4j-bindings
+[1]: https://blog.csdn.net/zhengqiqiqinqin/article/details/13772369
+[2]: https://www.oschina.net/question/93435_174549
+[3]: https://stackoverflow.com/questions/14024756/slf4j-class-path-contains-multiple-slf4j-bindings

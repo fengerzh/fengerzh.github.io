@@ -3,23 +3,17 @@ title: vertical-align和baseline的关系
 image: https://res.cloudinary.com/fengerzh/image/upload/vertical-align_bl1bo5.jpg
 category: 前端
 tags:
-- css
-- vertical-align
+  - css
+  - vertical-align
 description: 水平居中相对简单，而垂直居中的问题如果没有透彻理解的话，即使这一次做出来了，下一次情况稍加不同，又变得无所适从。
 color: black
 ---
-<div class="imageCaption" style="text-align: center; margin-bottom: 20px;">
-  <em class="markup--em markup--figure-em">Vertical align. 摄影师：Robert Alves de Jesus 来源：</em>
-  <a href="https://unsplash.com/" data-href="https://unsplash.com/" class="markup--anchor markup--figure-anchor" rel="nofollow noopener noopener" target="blank">
-    <em class="markup--em markup--figure-em">Unsplash</em>
-  </a>
-</div>
 
-如何让一段文字居中，在人类看来如此简单的问题，在css界却变成了多年令人头疼的问题，关于居中的文字如汗牛充栋，但每到用时还是会有问题。单单一个『中』是什么，在`css`里就有两种不同的称呼：`center`和`middle`，水平居中要用`center`，垂直居中要用`middle`（到了`css3`时代引入了更多混乱，flex布局里垂直居中也可以用`center`了）。
+如何让一段文字居中，在人类看来如此简单的问题，在 css 界却变成了多年令人头疼的问题，关于居中的文字如汗牛充栋，但每到用时还是会有问题。单单一个『中』是什么，在`css`里就有两种不同的称呼：`center`和`middle`，水平居中要用`center`，垂直居中要用`middle`（到了`css3`时代引入了更多混乱，flex 布局里垂直居中也可以用`center`了）。
 
 水平居中相对简单，而垂直居中的问题如果没有透彻理解的话，即使这一次做出来了，下一次情况稍加不同，又变得无所适从。
 
-关于垂直居中，`css`中最基本的一个属性就是`vertical-align`，要了解`vertical-align`，首先要了解`基线`(`baseline`)，因为`vertical-align`的缺省值就是`baseline`。[MDN的文档][1]中只说了一句：`baseline: 默认。元素放置在父元素的基线上`。
+关于垂直居中，`css`中最基本的一个属性就是`vertical-align`，要了解`vertical-align`，首先要了解`基线`(`baseline`)，因为`vertical-align`的缺省值就是`baseline`。[MDN 的文档][1]中只说了一句：`baseline: 默认。元素放置在父元素的基线上`。
 
 那么这个`父元素的基线`到底是个什么鬼？怎么才能决定父元素的基线在哪里呢？
 
@@ -82,6 +76,5 @@ color: black
 
 感兴趣的同学可以来我的[Codepen][2]里玩一玩，看看是不是这么回事。
 
-
-  [1]: http://www.w3school.com.cn/cssref/pr_pos_vertical-align.asp
-  [2]: https://codepen.io/fengerzh/pen/LedqgB
+[1]: http://www.w3school.com.cn/cssref/pr_pos_vertical-align.asp
+[2]: https://codepen.io/fengerzh/pen/LedqgB

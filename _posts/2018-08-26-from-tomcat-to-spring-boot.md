@@ -3,21 +3,20 @@ title: 从Tomcat到Spring Boot
 image: https://res.cloudinary.com/fengerzh/image/upload/spring-boot_ynthte.jpg
 category: 后端
 tags:
-- java
-- springboot
-- tomcat
+  - java
+  - springboot
+  - tomcat
 description: 暮夏八月是一年中最好的时节，我们尝试在这个夏天把这只已经独自在外游荡了19年的野猫Tomcat装入春天的长靴。
 color: black
 ---
-
 
 暮夏八月是一年中最好的时节，近近地看到了凉爽的希望，却还能享用暖热的余温。距离[Phil Webb][1]发布[Spring Boot][2]已经`4`年有余，我们尝试在这个夏天把这只已经独自在外游荡了`19`年的野猫[Tomcat][3]装入春天的长靴。
 
 从零开始安装`Spring Boot`项目，使用内嵌的`Tomcat`引擎是比较容易的事情，各种中文教程已经数不胜数，那不是我们要谈论的话题。在这里我们要做的是以最小的代价把一个已有的`Tomcat`项目改造为`Spring Boot`项目，以实现我们微服务改造的第一步。
 
-# 对pom.xml的修改
+## 对 pom.xml 的修改
 
-## 添加spring-boot-maven-plugin
+### 添加 spring-boot-maven-plugin
 
 一般来说，在每一个`pom.xml`的结尾，都会有一个`build`段落，在这里添加`spring-boot-maven-plugin`是必经的第一个步骤，添加完之后的完整段落如下：
 
@@ -47,7 +46,7 @@ color: black
 
 在这里，我们特别添加了一个`configuration`段落，设置`-Xmx`为`64m`，这是因为`Tomcat`缺省会分配物理内存的`1/4`为堆内存，这样我们一台电脑最多只能运行`4`个`Tomcat`服务，内存就不够用了。在这里我们把`heap size`的最大尺寸设置为只用`64m`，可以有效节省内存，最多会引起垃圾回收频繁一些而已，这之间的平衡可以自己掌握。
 
-## 添加spring-boot-starter-parent
+### 添加 spring-boot-starter-parent
 
 `Spring Boot`是一个非常独立的父母，它认为所有与`spring`有关的依赖都是它的孩子，所以我们必须引入`spring-boot-starter-parent`，让它来管理所有姓`spring`的孩子。
 
@@ -62,13 +61,15 @@ color: black
 
 由于`Spring Boot`自己管理所有`spring`依赖，你还需要把原先加在`pom.xml`里的所有与`spring`有关的依赖（以及所有`spring`想要管理的依赖，例如`com.fasterxml.jackson.core`）全部删掉，否则会造成版本冲突。比如这样：
 
-~~<dependency>~~
-~~<groupId>org.springframework</groupId>~~
-~~<artifactId>spring-core</artifactId>~~
-~~<version>4.1.1.RELEASE</version>~~
-~~</dependency>~~
+```xml
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>4.1.1.RELEASE</version>
+</dependency>
+```
 
-## 添加spring-boot-starter-web
+### 添加 spring-boot-starter-web
 
 `Spring Boot`唯一需要我们手工添加的依赖只有一个：
 
@@ -99,9 +100,9 @@ color: black
         </dependency>
 ```
 
-# 主程序入口
+## 主程序入口
 
-## Application.java
+### Application.java
 
 传统的`Tomcat`应用是让`Tomcat`先启动，然后加载我们的`war`文件，改造之后是`Spring Boot`先启动，由`Spring Boot`来加载`Tomcat`，所以我们需要给我们的应用里增加一个`Application.java`文件：
 
@@ -119,28 +120,28 @@ public class Application {
 }
 ```
 
-## application.properties
+### application.properties
 
 传统的`Tomcat`是把所有配置项放在`webapp/WEB-INF/web.xml`里来管理的，`Spring Boot`不使用`web.xml`文件，它把所有配置项都放在`resources/application.properties`文件中，例如：
 
-```
+```yaml
 server.port=8090
 server.servlet.context-path=/app
 ```
 
-# 运行
+## 运行
 
 至此为止，就已经完成了从`Tomcat`到`Spring Boot`的迁移。我们可以通过`maven`运行`Spring Boot`来看一下效果：
 
-```
+```bash
 mvn spring-boot:run
 ```
 
-# 添加dubbo
+## 添加 dubbo
 
 如果以前的项目是由`dubbo`完成的，暂时还不想破坏原有架构，可以把`dubbo`集成到`Spring Boot`中来。
 
-## pom.xml
+### pom.xml
 
 在`pom.xml`中添加[dubbo-spring-boot-starter][5]依赖：
 
@@ -156,7 +157,7 @@ mvn spring-boot:run
 
 `Dubbo`从`2.5.7`以后[废弃了<dubbo:annotation>方式][8]，改采`@DubboComponentScan`方式，我个人认为这种新方式远远不如旧的`<dubbo:annotation>`方式简便，所以目前或者以后也不准备迁移到更高版本的`dubbo`了。
 
-## Application.java
+### 新的 Application.java
 
 在`pom.xml`中添加对`dubbo`的依赖后，还需要在`Application.java`中添加`dubbo`的自动配置功能：
 
@@ -167,24 +168,24 @@ import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 @EnableDubboConfiguration
 ```
 
-## application.properties
+### 新的 application.properties
 
 然后在`application.properties`文件中添加`dubbo`的配置项：
 
-```
+```yaml
 spring.dubbo.appname=my-app
 spring.dubbo.registry=zookeeper://myip.mydomain.com:2181
 ```
 
 这个配置项功能很弱，但勉强够用。虽然它会造成一些[很难看的日志][9]：
 
-```
+```log
 [2018-08-26 12:21:25] WARN  -  [DUBBO] ReferenceConfig(null) is not DESTROYED when FINALIZE, dubbo version: 2.5.3, current host: 192.168.1.2
 ```
 
 但是鉴于这个插件已经被废弃了，不会有人来解决这个问题，只能勉强这么用了。
 
-# 总结
+## 总结
 
 以上就是从`Tomcat`迁移到`Spring Boot`所需要的所有改动。总计只是修改了`pom.xml`一个文件，新增了`Application.java`和`application.properties`两个文件，新增代码行数不超过`20`行，整个迁移过程还是比较简便的。
 
@@ -192,13 +193,12 @@ spring.dubbo.registry=zookeeper://myip.mydomain.com:2181
 
 更进一步，当以`Spring Boot`方式启动的微服务越来越多的时候，服务治理将成为一个难题，这时候就需要考虑引入`Eureka`或者甚至`Kubernetes`进行服务治理，那将是另外一个大话题了。
 
-
-  [1]: https://spring.io/team/pwebb
-  [2]: https://spring.io/projects/spring-boot
-  [3]: http://tomcat.apache.org/
-  [4]: http://undertow.io/
-  [5]: https://github.com/alibaba/dubbo-spring-boot-starter
-  [6]: https://github.com/alibaba/dubbo-spring-boot-starter/issues/80
-  [7]: https://github.com/apache/incubator-dubbo-spring-boot-project
-  [8]: https://github.com/mercyblitz/blogs/blob/da5b134b916e84c52176e5495e2742a56c67168b/java/dubbo/Dubbo-Annotation-Driven.md
-  [9]: https://github.com/alibaba/dubbo-spring-boot-starter/issues/83
+[1]: https://spring.io/team/pwebb
+[2]: https://spring.io/projects/spring-boot
+[3]: http://tomcat.apache.org/
+[4]: http://undertow.io/
+[5]: https://github.com/alibaba/dubbo-spring-boot-starter
+[6]: https://github.com/alibaba/dubbo-spring-boot-starter/issues/80
+[7]: https://github.com/apache/incubator-dubbo-spring-boot-project
+[8]: https://github.com/mercyblitz/blogs/blob/da5b134b916e84c52176e5495e2742a56c67168b/java/dubbo/Dubbo-Annotation-Driven.md
+[9]: https://github.com/alibaba/dubbo-spring-boot-starter/issues/83

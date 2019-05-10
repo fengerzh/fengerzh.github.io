@@ -3,17 +3,16 @@ title: UTF-8为什么会比UTF-16浪费？
 image: https://res.cloudinary.com/fengerzh/image/upload/utf-8_mwfabg.png
 category: 基础
 tags:
-- utf-8
+  - utf-8
 description: UTF-8的规范到底是怎么来的呢？为什么要这么做呢？
 color: black
 ---
 
 > And the Lord spake, saying, "First shalt thou take out the Holy Pin. Then, shalt thou count to three. No more. No less. Three shalt be the number thou shalt count, and the number of the counting shall be three. Four shalt thou not count, nor either count thou two, excepting that thou then proceed to three. Five is right out. Once the number three, being the third number, be reached, then, lobbest thou thy Holy Hand Grenade of Antioch towards thy foe, who, being naughty in My sight, shall snuff it."
-
 > 上帝说：『首先取下栓，然后不多不少数到三。应该数到三，你数到的数字是三。你除了数到三，既不要数到四，也不要数到二，五是数多了。「三」一旦被数到，成为被数到的第三个数字，就高高的向敌人扔出安提拉之神圣手榴弹，阿门。』
-&mdash;&mdash; [巨蟒与圣杯 Monty Python and the Holy Grail (1975)][1]
+> &mdash;&mdash; [巨蟒与圣杯 Monty Python and the Holy Grail (1975)][1]
 
-# UTF-8的来历
+## UTF-8 的来历
 
 ![clipboard.png](https://segmentfault.com/img/bV1pKO)
 
@@ -36,36 +35,48 @@ color: black
 接下来的事情就比较蹊跷了。我们怎么用`1`开头的字符既表示`2`字节，又表示`3`字节呢？假设我们只判断首位的`1`，这显然是不行的，没有办法区分，所以我们可以用`10`或者`11`开头的字符来表示`2`字节，但是`3`字节又该以什么开头？或者可以用`10`开头表示`2`字节，用`11`开头表示`3`字节？那么`4`字节的字符将来又该怎么办？也许我们可以用`110`开头表示`3`字节，用`111`开头表示`4`字节？那么`5`字节`6`字节呢？似乎我们看到了一个规律：前面的`1`越多，代表字节数越多。
 
 这时候，看一下我们的第一种方案：用`10`开头表示`2`字节，那么我们的一个字符将是
-```
+
+```bin
     10xx xxxx 10xx xxxx
 ```
+
 用`110`表示`3`字节，那么一个`3`字节的字符将是：
-```
+
+```bin
     110x xxxx 110x xxxx 110x xxxx
 ```
+
 这样无疑是能区分得开的。但是`4`字节怎么办？
-```
+
+```bin
     1110 xxxx 1110 xxxx 1110 xxxx 1110 xxxx
 ```
+
 吗？这样也能区分开，但似乎有点浪费。因为每个字节的前半扇都被无用的位占满了，真正有意义的只有后面一半。
 
 或者我们干脆这样做得了，我们来设计方案二：为了节省起见，所有后面的字符，我们统统都以`10`开头，只要遇见`10`我们就知道它只是整个字符流的一部分，它肯定不是开头，但是`10`这个开头已经被我们刚刚方案一的`2`字节字符占用了，怎么办？好办，把`2`字节字符的开头从`10`改成`110`，这样它就肯定不会和`10`冲突了。于是`2`字节字符变成
-```
+
+```bin
     110x xxxx 10xx xxxx
 ```
+
 再往后顺推，`3`字节字符变成
-```
+
+```bin
     1110x xxxx 10xx xxxx 10xx xxxx
 ```
+
 `4`字节字符变成
-```
+
+```bin
     1111 0xxx 10xx xxxx 10xx xxxx 10xx xxxx
 ```
+
 好像比刚才的方案一有所节省呢！并且还带来了额外的好处：如果我没有见到前面的`110`或者`1110`开头的字节，而直接见到了`10`开头的字节，毫无疑问地可以肯定我遇到的不是一个完整字符的开头，我可以直接忽略这个错误的字节，而直接找下一个正确字符的开头。
 
 这个改良之后的方案二就是`UTF-8`！
 
-# UTF-8表示的字符数
+## UTF-8 表示的字符数
 
 现在，我们来算一下在`UTF-8`方案里，每一种字节可以表示多少种字符。
 
@@ -79,9 +90,8 @@ color: black
 
 ![clipboard.png](https://segmentfault.com/img/bV1pQ6)
 
-# UTF-8和UTF-16
+## UTF-8 和 UTF-16
 
 那么`UTF-8`的`8`是从哪儿来的呢？它的意思就是说我们以`2`的`8`次方为一个字节，为一个最小单元。那么如果我们以`2`的`16`次方为一个最小单元，这就变成了`UTF-16`，它的规则和`UTF-8`相同，唯一不同的是它最小也要用`16`个`2`进制位表示一个字符，而`16`个`2`进制位直接可以表示`65536`种字符，所以在`UTF-16`方案里，我们汉字直接就可以如英文一样被堂而皇之地放在第`1`区了，也就是说，和英文具有同等的身份，都占用`16`个`2`进制位，也就相当于`UTF-8`里的`2`字节哦，看，这样一来，如果我们用`UTF-16`来存储英文的话，会造成浪费，因为英文在`UTF-8`里只占`1`字节，而在`UTF-16`里要占`2`字节，但是如果我们用`UTF-16`来存储中文的话，不但不浪费，反而还节省了呢！因为我们的中文在`UTF-8`里要占用`3`字节，而在`UTF-16`里只占用`2`字节，节省了`33%`之多呢！
 
-
-  [1]: https://movie.douban.com/subject/1294917/
+[1]: https://movie.douban.com/subject/1294917/

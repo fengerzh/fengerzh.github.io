@@ -11,13 +11,13 @@ color: black
 
 题目写的有点大，但确实是我近期最喜欢的主题和字体（没有之一），来自[一位前端妹子][1]的推荐。因为它太好看了，所以一定要大用特用，不但要用在`VSCode`上，并且还要用在`vi`上，所有一切能用的地方。
 
-# 颜色主题——One Dark
+## 颜色主题——One Dark
 
 颜色主题的名称基干是`One Dark`，应该最早是从`Atom`发展出来的，所以叫`Atom One Dark`，后来产生了变种如`One Dark Pro`，`One Dark Pro Vivid`等等，我在`VSCode`里选择的是[One Dark Pro][2]。
 
 ![screenshot2.png][3]
 
-## 在 VSCode 里安装
+### 在 VSCode 里安装
 
 安装方法很简单，直接在插件标签里输入`one dark`搜索就可以安装了。安装好之后怎么启用呢？
 
@@ -25,7 +25,7 @@ color: black
 
 在左上角菜单的首选项里找到颜色主题，就可以启用了。
 
-## 在 vi 里安装
+### 在 vi 里安装
 
 这么漂亮的主题，不用来装在`vi`里就可惜了。我们得做三件事：
 
@@ -33,7 +33,7 @@ color: black
 第二，在`.vim`目录下再建一个子目录`autoload`，然后在`autoload`下建一个文件`onedark.vim`，然后把[这个文件][5]的内容拷进去。
 第三，在`~`目录下建一个文件`.vimrc`，把下面的内容拷进去：
 
-```
+```bash
 if (empty($TMUX))
   if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -56,26 +56,26 @@ set paste
 
 ![readme_header.png][6]
 
-# Fira Code 字体
+## Fira Code 字体
 
 是不是已经足够漂亮了呢？也不尽然，当当当当，我们的大杀器出场！[Fira Code][7]，这可是在`github`上高达`27,000`多颗星的字体啊，字体星数仅次于著名的`Font Awesome`，我简直爱死他的这个`&`符号了。
 
 不同于颜色主题需要在两端安装，这个`Fira Code`字体只需要在`Mac`上安装就好了，因为`Terminal`只能使用客户端字体，所以不需要在服务器安装，只要把字体安装好之后，在`iTerm`里设置一下字体就好了。
 
-## 安装
+### 安装
 
 还是用我们最爱的`brew`来安装：
 
-```
+```bash
 brew tap caskroom/fonts
 brew cask install font-fira-code
 ```
 
-## 在 VSCode 中设置字体
+### 在 VSCode 中设置字体
 
 在`settings.json`中添加以下两行：
 
-```
+```json
 "editor.fontFamily": "'Fira Code'",
 "editor.fontLigatures": true,
 ```
@@ -86,7 +86,7 @@ brew cask install font-fira-code
 
 还带连字符的，还有那个箭头函数，是不是好吓人？
 
-## 在 iTerm 中设置字体
+### 在 iTerm 中设置字体
 
 由于`vi`是在`iTerm`中运行的，所以我们只能通过为`iTerm`设置字体来间接影响到`vi`：
 
@@ -98,7 +98,7 @@ brew cask install font-fira-code
 
 虽然看上去远没有`VSCode`那么炫酷，但也足以在服务端爽心悦目了。
 
-**祝你每天编程好心情！**
+## 祝你每天编程好心情！
 
 [1]: https://juejin.im/user/5a90166851882518c0797f50/pins
 [2]: https://binaryify.github.io/OneDark-Pro/#/

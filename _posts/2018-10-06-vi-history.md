@@ -16,7 +16,7 @@ color: black
 
 当我们每天打开电脑，使用 vi 的时候，一切显得是那么顺理成章，觉得`vi`这个编辑器从古老的`Unix`走来，似乎理所应当地成为我们系统中的默认编辑器，却不知道它曾经经历了怎样的曲折甚至是九死一生。我们用它，我们恨它，最终我们又离不了它，这就是`vi`。
 
-# 混沌初开
+## 混沌初开
 
 `1964`年，一个`21`岁的年轻人[Butler Lampson][2]从哈佛大学文学院毕业，来到加州大学伯克利分校读博，在这里，他遇到了另一个天才少年，`18`岁的[Peter Deutsch][3]在这里读本科，他们的任务是共同为一台`SDS-940`电脑编写一个分时操作系统：
 
@@ -44,21 +44,21 @@ This is line number two.
 
 .
 ,l
-**ed is the standard Unix text editor.$**
-**$**
-**This is line number two.$**
+**ed is the standard Unix text editor.\$**
+**\$**
+**This is line number two.\$**
 3s/two/three/
 ,l
-**ed is the standard Unix text editor.$**
-**$**
-**This is line number three.$**
+**ed is the standard Unix text editor.\$**
+**\$**
+**This is line number three.\$**
 w text
 **65**
 q
 
 是不是已经看到了一些`vi`的影子了呢？只是这时的`ed`还只是一个行编辑器，远远不是后来`vi`的样子。
 
-# 脱胎换骨
+## 脱胎换骨
 
 在`Ken`发明`Unix`的`6`年之后，`1975`年，他回到母校伯克利分校，这一次，他的使命是在伯克利分校的电脑系统上安装他自己发明的`Unix`，而这一套`Unix`日后将成为`Unix`界极富盛名的`BSD`（`Berkeley Software Distribution`，**伯克利软件套装**）。也就是这一年的夏天，`Ken`在伯克利分校遇到了我们故事的主人公[Bill Joy][6]，那一年，`Bill`是`21`岁，正在伯克利分校读研。
 
@@ -88,7 +88,7 @@ q
 
 还有一个细节是在`ADM-3A`键盘上，除了上下左右四个键外，还有一个`Home`键，它也可以通过按下`Ctrl`来实现回到行头的效果，而更关键的是这个键同时也是`~`键，这也就是为什么`Unix`系统里会用`~`来代表`home`目录的原因。
 
-# 黯淡时光
+## 黯淡时光
 
 `vi`的第一个正式版本是在`1978`年`3`月随着`BSD 1.0`同时发布的，这注定了它以后将走过一段不平凡的岁月。
 
@@ -114,7 +114,7 @@ q
 
 ![图片描述][16]
 
-# 凤凰涅磐
+## 凤凰涅磐
 
 在这场旷日持久的官司当中，`vi`不能用了，但是`vi`的热爱者并不愿意切换到`emacs`上，直到`1990`年，`Steve Kirkendall`才发布了一个`vi`的克隆版，起名叫`Elvis`。`1992`年，`Elvis`被纳入`BSD`，`1994`年，[Keith Bostic][17]在`Elvis`基础上开发了`nvi`，一直沿用至今。
 

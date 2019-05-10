@@ -3,37 +3,31 @@ title: 5分钟把任意网站变成桌面软件
 image: https://res.cloudinary.com/fengerzh/image/upload/website-software_dopm6x.jpg
 category: 前端
 tags:
-- electron
-- nativefier
+  - electron
+  - nativefier
 description: 介绍一个工具，让你`5`分钟之内就把一个网站变成一个可安装的桌面软件。
 color: black
 ---
-<div class="imageCaption" style="text-align: center; margin-bottom: 20px;">
-  <em class="markup--em markup--figure-em">Display. 摄影师：Bram Naus 来源：</em>
-  <a href="https://unsplash.com/" data-href="https://unsplash.com/" class="markup--anchor markup--figure-anchor" rel="nofollow noopener noopener" target="blank">
-    <em class="markup--em markup--figure-em">Unsplash</em>
-  </a>
-</div>
 
 以前，开发一个桌面软件要花费大量的人力和时间。现在，随着`web`技术的快速发展，很多业务逻辑已经在网站上实现。既然如此，能不能把网站快速转变成软件呢？这方面的实践已经有很多，早期的`Qt`，后来的`Electron`，都可以实现跨平台桌面软件的开发。不就是内嵌一个浏览器么？能不能快一些？再快一些？今天，给大家介绍一个工具，让你`5`分钟之内就把一个网站变成一个可安装的桌面软件。
 
-# 制作软件
+## 制作软件
 
 让我们以[https://segmentfaut.com][1]这个网站为例来制作我们的软件。
 
-## 安装工具
+### 安装工具
 
 一句话搞定：
 
     npm i -g nativefier
 
-## 开始制作
+### 开始制作
 
 一句话搞定：
 
     nativefier "https://segmentfault.com"
 
-## 运行软件
+### 运行软件
 
 好了，软件制作好了，看看效果吧：
 
@@ -41,7 +35,7 @@ color: black
 
 就是这么简单，有没有？
 
-## 可选步骤
+### 可选步骤
 
 以上是必经步骤，以下是可选步骤。
 
@@ -49,7 +43,7 @@ color: black
 
 同时，在设置好这些选项之后，为了便于以后调整和使用，最好是做一个批处理脚本：
 
-```
+```bash
 #!/bin/bash
 
 nativefier --name "SegmentFault" "https://segmentfault.com/"
@@ -57,11 +51,11 @@ nativefier --name "SegmentFault" "https://segmentfault.com/"
 
 调整完参数之后，重新运行这个脚本就可以了。
 
-# 制作安装包
+## 制作安装包
 
 制作完软件之后，我们得到是一个名为`SegmentFault.app`的应用程序，虽然已经可以执行了，但看上去不够专业，专业的安装包都是`.dmg`为后缀的文件，接下来我们就来制作一个`.dmg`。
 
-打开Mac自带的**磁盘工具**，新建一个**空白映像**。
+打开 Mac 自带的**磁盘工具**，新建一个**空白映像**。
 
 ![图片描述][4]
 
@@ -81,8 +75,8 @@ nativefier --name "SegmentFault" "https://segmentfault.com/"
 
 怎么样，制作一个桌面软件是不是很容易呢？你也来学着把贵司的网站变成软件吧！
 
-  [1]: https://segmentfault.com/
-  [2]: https://segmentfault.com/img/bV2nuw
-  [3]: https://github.com/jiahaog/nativefier/blob/master/docs/api.md
-  [4]: https://segmentfault.com/img/bV2nvn
-  [5]: https://pan.baidu.com/s/1ghaT1mj
+[1]: https://segmentfault.com/
+[2]: https://segmentfault.com/img/bV2nuw
+[3]: https://github.com/jiahaog/nativefier/blob/master/docs/api.md
+[4]: https://segmentfault.com/img/bV2nvn
+[5]: https://pan.baidu.com/s/1ghaT1mj

@@ -3,7 +3,7 @@ title: 我的nginx锅炉片
 description: 我在日常工作中经常会用到的nginx配置片段。
 category: 运维
 tags:
-- nginx
+  - nginx
 image: https://res.cloudinary.com/fengerzh/image/upload/boilerplate_gudueg.jpg
 color: black
 ---
@@ -40,17 +40,17 @@ color: black
 ```nginx
     location /somewhere/ {
         if ($request_method = OPTIONS) {
-        	add_header Access-Control-Allow-Origin "$http_origin";
-        	add_header Access-Control-Allow-Credentials "true";
-        	add_header Access-Control-Allow-Methods "GET, POST, OPTIONS";
-        	add_header Access-Control-Allow-Headers "sitessubid,Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,Keep-Alive,X-Requested-With,If-Modified-Since";
-        	add_header Content-Length 0;
-        	add_header Content-Type text/plain;
-        	return 200;
-    	}
+            add_header Access-Control-Allow-Origin "$http_origin";
+            add_header Access-Control-Allow-Credentials "true";
+            add_header Access-Control-Allow-Methods "GET, POST, OPTIONS";
+            add_header Access-Control-Allow-Headers "sitessubid,Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,Keep-Alive,X-Requested-With,If-Modified-Since";
+            add_header Content-Length 0;
+            add_header Content-Type text/plain;
+            return 200;
+        }
         if ($request_method = POST) {
-        	add_header Access-Control-Allow-Origin "$http_origin";
-        	add_header Access-Control-Allow-Credentials "true";
+            add_header Access-Control-Allow-Origin "$http_origin";
+            add_header Access-Control-Allow-Credentials "true";
         }
     }
 ```
