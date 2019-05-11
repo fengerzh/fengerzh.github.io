@@ -28,7 +28,7 @@
 
 可直接通过`Github`下载本模板：
 
-```
+```bash
 git clone git@github.com:fengerzh/fengerzh.github.io.git
 ```
 
@@ -36,7 +36,7 @@ git clone git@github.com:fengerzh/fengerzh.github.io.git
 
 ### 安装 Jekyll
 
-```
+```bash
 brew install ruby
 gem install bundler
 gem install jekyll
@@ -44,6 +44,6 @@ gem install jekyll
 
 ## 运行
 
-```
+```bash
 bundle exec jekyll serve
 ```

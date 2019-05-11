@@ -5,9 +5,9 @@
 此文件格式基于[Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 此项目的版本信息遵循[Semantic Versioning](http://semver.org/spec/v2.0.0.html)。
 
-## \[未发版]
+## [未发版]
 
-## \[1.0.0] - 2017-12-18
+## [1.0.0] - 2017-12-18
 
 ### 1.0.0 增加
 
