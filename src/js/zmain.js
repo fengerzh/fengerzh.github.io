@@ -38,7 +38,7 @@
 
   // Closing menu with ESC
   document.addEventListener('keyup', function(e) {
-    if (e.keyCode == 27 && $('.search-overlay').length) {
+    if (e.keyCode === 27 && $('.search-overlay').length) {
       close_search();
     }
   });
@@ -74,24 +74,26 @@
         .getToken()
         .then(function(currentToken) {
           if (currentToken) {
-            if (window.localStorage.getItem('firebaseTokenSentToServer') != 1) {
+            if (
+              window.localStorage.getItem('firebaseTokenSentToServer') !== '1'
+            ) {
               firebase
                 .database()
                 .ref('messagetokens')
                 .push()
                 .set(currentToken);
-              window.localStorage.setItem('firebaseTokenSentToServer', 1);
+              window.localStorage.setItem('firebaseTokenSentToServer', '1');
             } else {
             }
           } else {
             // Show permission UI.
             // updateUIForPushPermissionRequired();
-            window.localStorage.setItem('firebaseTokenSentToServer', 0);
+            window.localStorage.setItem('firebaseTokenSentToServer', '0');
           }
         })
         .catch(function(err) {
           // showToken('Error retrieving Instance ID token. ', err);
-          window.localStorage.setItem('firebaseTokenSentToServer', 0);
+          window.localStorage.setItem('firebaseTokenSentToServer', '0');
         });
     })
     .catch(function(err) {

@@ -41,12 +41,17 @@ color: black
 
 写起来大概就是这样：
 
-    <div class="a">aaa</div>
-    <div class="b">bbb</div>
-    .a {
-      font-size: 36px;
-      display: run-in;
-    }
+```html
+<div class="a">aaa</div>
+<div class="b">bbb</div>
+```
+
+```css
+.a {
+  font-size: 36px;
+  display: run-in;
+}
+```
 
 这有什么用呢？我们拿`span`设置`font-size`一样可以实现这个效果，就让`IE`自己跟自己玩去吧！说实话，在人力资源如此宝贵的今天，`IE`的产品经理不知脑子是不是进水了，不派工程师去实现那么多比这重要的多得多的特性，却花时间做这么个没用的玩意儿，难道工程师的时间不是金钱吗？难怪市场占有率连年下滑。
 
@@ -102,11 +107,13 @@ color: black
 
 那位同学说，我们用`clear: both;`不是一样可以达到这效果吗？
 
-    .container::after {
-        content: '';
-        clear: both;
-        display: table;
-    }
+```css
+.container::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+```
 
 小明，请你出去！我们在讲`display: flow-root;`，不是在讲`clear: both;`！
 

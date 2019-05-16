@@ -29,7 +29,7 @@ color: black
 
 ![图片描述][4]
 
-### GTmetrix
+### GTmetrix 检查
 
 我最常使用的工具不是以上两款，而是一个名叫[GTmetrix][5]的网站，这个网站结合了以上两个工具，给出了更加完整的建议。
 
@@ -43,7 +43,7 @@ color: black
 
 ## 优化
 
-### GTMetrix
+### GTMetrix 优化
 
 优化的第一步，我们还是先从`GTMetrix`开始。一般网站常见的问题和建议如下：
 
