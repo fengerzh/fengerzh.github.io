@@ -1,64 +1,71 @@
-(function () {
-    'use strict';
+(function() {
+  'use strict';
 
-    var post = document.querySelector('.post-content');
-    var progressBar = document.querySelector('.progress-bar');
+  var post = document.querySelector('.post-content');
+  var progressBar = document.querySelector('.progress-bar');
 
-    if (post && progressBar) {
-        var lastScrollTop = 0;
-        var maxScrollTop = post.scrollHeight;
-        
-        var completed = progressBar.querySelector('.completed');
-        var remaining = progressBar.querySelector('.remaining');
-        var timeCompleted = progressBar.querySelector('.time-completed');
-        var timeRemaining = progressBar.querySelector('.time-remaining');
+  if (post && progressBar) {
+    var lastScrollTop = 0;
+    var maxScrollTop = post.scrollHeight;
 
-        document.addEventListener('scroll', function() {
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var completed = progressBar.querySelector('.completed');
+    var remaining = progressBar.querySelector('.remaining');
+    var timeCompleted = progressBar.querySelector('.time-completed');
+    var timeRemaining = progressBar.querySelector('.time-remaining');
 
-            if (scrollTop > lastScrollTop) {
-                progressBar.style.bottom = '0%';
-            } else {
-                progressBar.style.bottom = '-100%';
-            }
+    document.addEventListener('scroll', function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            if (scrollTop <= maxScrollTop) {
-                var percentage = scrollTop/maxScrollTop;
+      if (scrollTop > lastScrollTop) {
+        progressBar.style.bottom = '0%';
+      } else {
+        progressBar.style.bottom = '-100%';
+      }
 
-                var completedVal = (percentage * 100).toFixed(2);
-                var remainingVal = 100 - parseFloat(completedVal);
-                completed.style.width = completedVal.toString() + '%';
-                remaining.style.width = remainingVal.toString() + '%';
+      if (scrollTop <= maxScrollTop) {
+        var percentage = scrollTop / maxScrollTop;
 
-                var totalSeconds = parseInt(progressBar.getAttribute('data-minutes')) * 60;
+        var completedVal = (percentage * 100).toFixed(2);
+        var remainingVal = 100 - parseFloat(completedVal);
+        completed.style.width = completedVal.toString() + '%';
+        remaining.style.width = remainingVal.toString() + '%';
 
-                var completedTime = parseInt(percentage * totalSeconds);
-                var completedMin = parseInt(completedTime/60);
-                var completedSec = parseInt((completedTime/60 - completedMin) * 60);
+        var totalSeconds =
+          parseInt(progressBar.getAttribute('data-minutes'), 10) * 60;
 
-                var remainingTime = totalSeconds - completedTime;
-                var remainingMin = parseInt(remainingTime/60);
-                var remainingSec = parseInt((remainingTime/60 - remainingMin) * 60);
+        var completedTime = parseInt(percentage * totalSeconds, 10);
+        var completedMin = parseInt(completedTime / 60, 10);
+        var completedSec = parseInt(
+          (completedTime / 60 - completedMin) * 60,
+          10
+        );
 
-                completedMin = (completedMin < 10) ? '0' + completedMin : completedMin;
-                completedSec = (completedSec < 10) ? '0' + completedSec : completedSec;
-                remainingMin = (remainingMin < 10) ? '0' + remainingMin : remainingMin;
-                remainingSec = (remainingSec < 10) ? '0' + remainingSec : remainingSec;
+        var remainingTime = totalSeconds - completedTime;
+        var remainingMin = parseInt(remainingTime / 60, 10);
+        var remainingSec = parseInt(
+          (remainingTime / 60 - remainingMin) * 60,
+          10
+        );
 
-                timeCompleted.innerText = completedMin + ':' + completedSec;
-                timeRemaining.innerText = remainingMin + ':' + remainingSec;
-            } else {
-                completed.style.width = '100%';
-                remaining.style.width = '0%';
+        completedMin = completedMin < 10 ? '0' + completedMin : completedMin;
+        completedSec = completedSec < 10 ? '0' + completedSec : completedSec;
+        remainingMin = remainingMin < 10 ? '0' + remainingMin : remainingMin;
+        remainingSec = remainingSec < 10 ? '0' + remainingSec : remainingSec;
 
-                var minutes = parseInt(progressBar.getAttribute('data-minutes'));
-                minutes = (minutes < 10) ? '0' + minutes : minutes;
+        timeCompleted.innerText = completedMin + ':' + completedSec;
+        timeRemaining.innerText = remainingMin + ':' + remainingSec;
+      } else {
+        completed.style.width = '100%';
+        remaining.style.width = '0%';
 
-                timeCompleted.innerText = '00:00';
-                timeRemaining.innerText = minutes + ':00';
-            }
+        var minutes = parseInt(progressBar.getAttribute('data-minutes'), 10);
+        minutes = minutes < 10 ? '0' + minutes : minutes;
 
-            lastScrollTop = scrollTop;
-        });
-    }
+        timeCompleted.innerText = '00:00';
+        timeRemaining.innerText = minutes + ':00';
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  }
 })();
