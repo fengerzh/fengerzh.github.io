@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.fengerzh.com/">
-    <img alt="zhangjing" src="https://sfault-avatar.b0.upaiyun.com/439/654/439654051-58781bd01ba83_huge256" style="border-radius: 500px;" />
+    <img alt="zhangjing" src="/assets/img/icons/android-chrome-512x512.png" style="border-radius: 500px; width: 200px;" />
   </a>
 </p>
 
