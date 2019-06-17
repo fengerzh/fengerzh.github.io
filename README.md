@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.fengerzh.com/">
-    <img alt="zhangjing" src="/assets/img/icons/android-chrome-512x512.png" style="border-radius: 500px; max-width: 20%;" />
+    <img alt="zhangjing" src="/assets/img/icons/android-chrome-192x192.png" />
   </a>
 </p>
 
