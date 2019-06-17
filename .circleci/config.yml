@@ -5,6 +5,8 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
+      - run: gem update --system
+      - run: gem install bundler
       - run: bundle install
       - run: bundle exec jekyll build
       - run: echo "Build finished!"
