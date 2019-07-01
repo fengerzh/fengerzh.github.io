@@ -54,7 +54,7 @@ gulp.task(
  * Stylus task
  */
 gulp.task('stylus', function() {
-  gulp
+  return gulp
     .src('src/styl/main.styl')
     .pipe(plumber())
     .pipe(
