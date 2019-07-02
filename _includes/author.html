@@ -1,41 +1,67 @@
 <section class="author" itemprop="author">
   <div class="details" itemscope itemtype="http://schema.org/Person">
     <a href="/about">
-      <img itemprop="image" class="img-rounded" src="https://sfault-avatar.b0.upaiyun.com/439/654/439654051-58781bd01ba83_huge256" alt="{{ site.username }}">
+      <img
+        itemprop="image"
+        class="img-rounded"
+        src="/assets/img/icons/android-chrome-192x192.png"
+        alt="{{ site.username }}"
+      />
     </a>
     <p class="def">作者</p>
     <h3 class="name">
-      <a itemprop="name" href="https://github.com/{{ site.github_username }}">{{ site.username }}</a>
+      <a itemprop="name" href="https://github.com/{{ site.github_username }}">{{
+        site.username
+      }}</a>
     </h3>
     <p class="desc">{{ site.user_description }}</p>
     <p>
       {% if site.github_username %}
-      <a itemprop="github" href="https://github.com/{{ site.github_username }}" title="Github">
+      <a
+        itemprop="github"
+        href="https://github.com/{{ site.github_username }}"
+        title="Github"
+      >
         <svg><use xlink:href="#icon-github"></use></svg>
       </a>
-      {% endif %}
-      {% if site.facebook_username %}
-      <a itemprop="facebook" href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
+      {% endif %} {% if site.facebook_username %}
+      <a
+        itemprop="facebook"
+        href="https://www.facebook.com/{{ site.facebook_username }}"
+        title="Facebook"
+      >
         <svg><use xlink:href="#icon-facebook"></use></svg>
       </a>
-      {% endif %}
-      {% if site.twitter_username %}
-      <a itemprop="twitter" href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
+      {% endif %} {% if site.twitter_username %}
+      <a
+        itemprop="twitter"
+        href="https://twitter.com/{{ site.twitter_username }}"
+        title="Twitter"
+      >
         <svg><use xlink:href="#icon-twitter"></use></svg>
       </a>
-      {% endif %}
-      {% if site.medium_username %}
-      <a itemprop="medium" href="https://medium.com/@{{ site.medium_username }}" title="Twitter">
+      {% endif %} {% if site.medium_username %}
+      <a
+        itemprop="medium"
+        href="https://medium.com/@{{ site.medium_username }}"
+        title="Twitter"
+      >
         <svg><use xlink:href="#icon-medium"></use></svg>
       </a>
-      {% endif %}
-      {% if site.instagram_username %}
-      <a itemprop="instagram" href="https://www.instagram.com/{{ site.instagram_username }}" title="Instagram">
+      {% endif %} {% if site.instagram_username %}
+      <a
+        itemprop="instagram"
+        href="https://www.instagram.com/{{ site.instagram_username }}"
+        title="Instagram"
+      >
         <svg><use xlink:href="#icon-instagram"></use></svg>
       </a>
-      {% endif %}
-      {% if site.linkedin_username %}
-      <a itemprop="linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">
+      {% endif %} {% if site.linkedin_username %}
+      <a
+        itemprop="linkedin"
+        href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
+        title="LinkedIn"
+      >
         <svg><use xlink:href="#icon-linkedin"></use></svg>
       </a>
       {% endif %}
