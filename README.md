@@ -43,6 +43,13 @@ gem install bundler
 gem install jekyll
 ```
 
+### 编译css和js
+
+```bash
+yarn
+gulp
+```
+
 ## 运行
 
 ```bash
