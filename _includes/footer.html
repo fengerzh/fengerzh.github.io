@@ -1,56 +1,109 @@
 <footer>
-    <p>
-      {% if site.github_username %}
-      <a itemprop="github" href="https://github.com/{{ site.github_username }}" title="Github">
-        <svg><use xlink:href="#icon-github"></use></svg>
-      </a>
-      {% endif %}
-      {% if site.facebook_username %}
-      <a itemprop="facebook" href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
-        <svg><use xlink:href="#icon-facebook"></use></svg>
-      </a>
-      {% endif %}
-      {% if site.twitter_username %}
-      <a itemprop="twitter" href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
-        <svg><use xlink:href="#icon-twitter"></use></svg>
-      </a>
-      {% endif %}
-      {% if site.medium_username %}
-      <a itemprop="medium" href="https://medium.com/@{{ site.medium_username }}" title="Twitter">
-        <svg><use xlink:href="#icon-medium"></use></svg>
-      </a>
-      {% endif %}
-      {% if site.instagram_username %}
-      <a itemprop="instagram" href="https://www.instagram.com/{{ site.instagram_username }}" title="Instagram">
-        <svg><use xlink:href="#icon-instagram"></use></svg>
-      </a>
-      {% endif %}
-      {% if site.linkedin_username %}
-      <a itemprop="linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">
-        <svg><use xlink:href="#icon-linkedin"></use></svg>
-      </a>
-      {% endif %}
-    </p>
-    <ul>
-        {% for link in site.links %}
-          <li><a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a></li>
-        {% endfor %}
-        <li><a class="feed" href="{{ site.url }}{{site.baseurl}}/feed.xml" title="Atom/RSS feed">订阅</a></li>
-    </ul>
-    <p><span>日新亭</span>模板：<svg class="love"><use xlink:href="#icon-heart"></use></svg>来自<a href="http://www.rossener.com" target="_blank" class="creator" rel="noopener">Thiago Rossener</a></p>
+  <p>
+    {% if site.github_username %}
+    <a
+      itemprop="github"
+      href="https://github.com/{{ site.github_username }}"
+      title="Github"
+    >
+      <svg><use xlink:href="#icon-github"></use></svg>
+    </a>
+    {% endif %} {% if site.facebook_username %}
+    <a
+      itemprop="facebook"
+      href="https://www.facebook.com/{{ site.facebook_username }}"
+      title="Facebook"
+    >
+      <svg><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+    {% endif %} {% if site.twitter_username %}
+    <a
+      itemprop="twitter"
+      href="https://twitter.com/{{ site.twitter_username }}"
+      title="Twitter"
+    >
+      <svg><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    {% endif %} {% if site.medium_username %}
+    <a
+      itemprop="medium"
+      href="https://medium.com/@{{ site.medium_username }}"
+      title="Twitter"
+    >
+      <svg><use xlink:href="#icon-medium"></use></svg>
+    </a>
+    {% endif %} {% if site.instagram_username %}
+    <a
+      itemprop="instagram"
+      href="https://www.instagram.com/{{ site.instagram_username }}"
+      title="Instagram"
+    >
+      <svg><use xlink:href="#icon-instagram"></use></svg>
+    </a>
+    {% endif %} {% if site.linkedin_username %}
+    <a
+      itemprop="linkedin"
+      href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
+      title="LinkedIn"
+    >
+      <svg><use xlink:href="#icon-linkedin"></use></svg>
+    </a>
+    {% endif %}
+  </p>
+  <ul>
+    {% for link in site.links %}
+    <li>
+      <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{
+        link.title
+      }}</a>
+    </li>
+    {% endfor %}
+    <li>
+      <a
+        class="feed"
+        href="{{ site.url }}{{ site.baseurl }}/feed.xml"
+        title="Atom/RSS feed"
+        >订阅</a
+      >
+    </li>
+  </ul>
+  <p>
+    <span>日新亭</span>模板：<svg class="love">
+      <use xlink:href="#icon-heart"></use></svg
+    >来自<a
+      href="http://www.rossener.com"
+      target="_blank"
+      class="creator"
+      rel="noopener"
+      >Thiago Rossener</a
+    >
+  </p>
 </footer>
+<script>
+  (function() {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBHQjxlE2uaJ0janHVGUMsXpPGggkh-XrQ",
-    authDomain: "fengerzhcom.firebaseapp.com",
-    databaseURL: "https://fengerzhcom.firebaseio.com",
-    projectId: "fengerzhcom",
-    storageBucket: "fengerzhcom.appspot.com",
-    messagingSenderId: "84597767663"
+    apiKey: 'AIzaSyBHQjxlE2uaJ0janHVGUMsXpPGggkh-XrQ',
+    authDomain: 'fengerzhcom.firebaseapp.com',
+    databaseURL: 'https://fengerzhcom.firebaseio.com',
+    projectId: 'fengerzhcom',
+    storageBucket: 'fengerzhcom.appspot.com',
+    messagingSenderId: '84597767663'
   };
   firebase.initializeApp(config);
 </script>
-<script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
 {% include stats.html %}
