@@ -15,6 +15,7 @@
 [![CircleCI](https://circleci.com/gh/fengerzh/fengerzh.github.io.svg?style=svg)](https://circleci.com/gh/fengerzh/fengerzh.github.io)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/37c78fba3d724be09bab853b9e84f91f)](https://www.codacy.com/app/fengerzh/fengerzh.github.io?utm_source=github.com&utm_medium=referral&utm_content=fengerzh/fengerzh.github.io&utm_campaign=Badge_Grade)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4af97c85-c94b-4df1-8832-184020a7d0c5/deploy-status)](https://app.netlify.com/sites/fengerzh/deploys)
+[![Build status](https://ci.appveyor.com/api/projects/status/0e8iejyct7g7a3dv?svg=true)](https://ci.appveyor.com/project/fengerzh/fengerzh-github-io)
 
 支持 996.icu：<a href="https://996.icu"><img src="https://img.shields.io/badge/support-996.icu-red.svg"></a>
 
