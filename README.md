@@ -13,7 +13,8 @@
 编译结果：
 [![Build Status](https://semaphoreci.com/api/v1/fengerzh/fengerzh-github-io/branches/master/shields_badge.svg)](https://semaphoreci.com/fengerzh/fengerzh-github-io)
 [![CircleCI](https://circleci.com/gh/fengerzh/fengerzh.github.io.svg?style=svg)](https://circleci.com/gh/fengerzh/fengerzh.github.io)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/37c78fba3d724be09bab853b9e84f91f)](https://www.codacy.com/app/fengerzh/fengerzh.github.io?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fengerzh/fengerzh.github.io&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/37c78fba3d724be09bab853b9e84f91f)](https://www.codacy.com/app/fengerzh/fengerzh.github.io?utm_source=github.com&utm_medium=referral&utm_content=fengerzh/fengerzh.github.io&utm_campaign=Badge_Grade)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4af97c85-c94b-4df1-8832-184020a7d0c5/deploy-status)](https://app.netlify.com/sites/fengerzh/deploys)
 
 支持 996.icu：<a href="https://996.icu"><img src="https://img.shields.io/badge/support-996.icu-red.svg"></a>
 
@@ -43,7 +44,7 @@ gem install bundler
 gem install jekyll
 ```
 
-### 编译css和js
+### 编译 css 和 js
 
 ```bash
 yarn

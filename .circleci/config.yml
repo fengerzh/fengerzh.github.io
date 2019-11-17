@@ -1,6 +1,8 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: circleci/ruby:2.4.4
     machine: true
     working_directory: ~/project
     steps:
