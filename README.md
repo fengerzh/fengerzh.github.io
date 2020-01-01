@@ -7,6 +7,7 @@
 # 日新亭模板
 
 想了解与此模板相关的任何问题，请点此链接：[![Join the chat at https://gitter.im/fengerzh-github-io/Lobby](https://badges.gitter.im/fengerzh-github-io/Lobby.svg)](https://gitter.im/fengerzh-github-io/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffengerzh%2Ffengerzh.github.io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffengerzh%2Ffengerzh.github.io?ref=badge_shield)
 
 欢迎加入：[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
@@ -57,3 +58,7 @@ gulp
 ```bash
 bundle exec jekyll serve
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffengerzh%2Ffengerzh.github.io.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffengerzh%2Ffengerzh.github.io?ref=badge_large)
