@@ -53,9 +53,9 @@
   <ul>
     {% for link in site.links %}
     <li>
-      <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{
-        link.title
-      }}</a>
+      <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}"
+        >{{ link.title }}</a
+      >
     </li>
     {% endfor %}
     <li>
@@ -77,6 +77,7 @@
       rel="noopener"
       >Thiago Rossener</a
     >
+    <a href="http://beian.miit.gov.cn/">京ICP备19045434号</a>
   </p>
 </footer>
 <script>
