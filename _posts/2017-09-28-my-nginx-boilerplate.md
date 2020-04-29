@@ -25,6 +25,10 @@ color: black
 
 好吧，别问我为什么，我也不知道为什么，但总之这样有效。
 
+`gzip`虽然好，但是如果开了`gzip`之后，`content_length`会消失，导致用户在下载文件时看不到下载百分比，所以如果需要的话，可以把相关的`content type`的`gzip`去掉以支持百分比，例如可以把上面的`application/octet-stream`去掉，以便用户在下载二进制文件例如`exe`以及`apk`时可以看到百分比。
+
+另外这里的`gzip`是动态压缩，也就是说在内容生成的同时进行压缩，还有另外一个开关`gzip_static`，用来对静态文件进行压缩，但需要事先压缩，没有具体研究过。
+
 ### expire header
 
 ```nginx
