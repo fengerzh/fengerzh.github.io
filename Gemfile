@@ -29,4 +29,4 @@ end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rouge', '= 3.11.0'
-gem 'jekyll-sitemap', '= 1.2.0'
+gem 'jekyll-sitemap', '= 1.4.0'
