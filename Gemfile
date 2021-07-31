@@ -30,3 +30,5 @@ end
 
 gem 'rouge', '= 3.26.0'
 gem 'jekyll-sitemap', '= 1.4.0'
+
+gem "webrick", "~> 1.7"
