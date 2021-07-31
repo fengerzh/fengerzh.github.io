@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: gem update --system
-      - run: gem install bundler
+      - run: gem install bundler --version=1.17.2
       - run: bundle install
       - run: bundle exec jekyll build
       - run: echo "Build finished!"
