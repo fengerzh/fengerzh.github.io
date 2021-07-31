@@ -14,7 +14,7 @@
 编译结果：
 [![Build Status](https://semaphoreci.com/api/v1/fengerzh/fengerzh-github-io/branches/master/shields_badge.svg)](https://semaphoreci.com/fengerzh/fengerzh-github-io)
 [![CircleCI](https://circleci.com/gh/fengerzh/fengerzh.github.io.svg?style=svg)](https://circleci.com/gh/fengerzh/fengerzh.github.io)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/37c78fba3d724be09bab853b9e84f91f)](https://www.codacy.com/app/fengerzh/fengerzh.github.io?utm_source=github.com&utm_medium=referral&utm_content=fengerzh/fengerzh.github.io&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a467cf9fdb0a4ea3b8de6705200180f2)](https://www.codacy.com/gh/fengerzh/fengerzh.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fengerzh/fengerzh.github.io&amp;utm_campaign=Badge_Grade)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4af97c85-c94b-4df1-8832-184020a7d0c5/deploy-status)](https://app.netlify.com/sites/fengerzh/deploys)
 [![Build status](https://ci.appveyor.com/api/projects/status/0e8iejyct7g7a3dv?svg=true)](https://ci.appveyor.com/project/fengerzh/fengerzh-github-io)
 
@@ -59,6 +59,6 @@ gulp
 bundle exec jekyll serve
 ```
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffengerzh%2Ffengerzh.github.io.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffengerzh%2Ffengerzh.github.io?ref=badge_large)
