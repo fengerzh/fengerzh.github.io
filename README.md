@@ -15,7 +15,7 @@
 [![Build Status](https://semaphoreci.com/api/v1/fengerzh/fengerzh-github-io/branches/master/shields_badge.svg)](https://semaphoreci.com/fengerzh/fengerzh-github-io)
 [![CircleCI](https://circleci.com/gh/fengerzh/fengerzh.github.io.svg?style=svg)](https://circleci.com/gh/fengerzh/fengerzh.github.io)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a467cf9fdb0a4ea3b8de6705200180f2)](https://www.codacy.com/gh/fengerzh/fengerzh.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fengerzh/fengerzh.github.io&amp;utm_campaign=Badge_Grade)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4af97c85-c94b-4df1-8832-184020a7d0c5/deploy-status)](https://app.netlify.com/sites/fengerzh/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/20299d54-5dac-4395-83c6-01a47b3979ec/deploy-status)](https://app.netlify.com/sites/fengerzh/deploys)
 [![Build status](https://ci.appveyor.com/api/projects/status/0e8iejyct7g7a3dv?svg=true)](https://ci.appveyor.com/project/fengerzh/fengerzh-github-io)
 
 支持 996.icu：<a href="https://996.icu"><img src="https://img.shields.io/badge/support-996.icu-red.svg"></a>
