@@ -12,7 +12,7 @@ specifiers:
   gulp-uglify: 3.0.2
   jeet: 7.2.0
   kouto-swiss: 1.1.0
-  minimist: 1.2.5
+  minimist: 1.2.6
   rupture: 0.7.1
 
 devDependencies:
@@ -27,7 +27,7 @@ devDependencies:
   gulp-uglify: 3.0.2
   jeet: 7.2.0
   kouto-swiss: 1.1.0
-  minimist: 1.2.5
+  minimist: 1.2.6
   rupture: 0.7.1
 
 packages:
@@ -3444,7 +3444,7 @@ packages:
       decamelize: 1.2.0
       loud-rejection: 1.6.0
       map-obj: 1.0.1
-      minimist: 1.2.5
+      minimist: 1.2.6
       normalize-package-data: 2.5.0
       object-assign: 4.1.1
       read-pkg-up: 1.0.1
@@ -3531,6 +3531,11 @@ packages:
 
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
+    dev: true
+    optional: true
+
+  /minimist/1.2.6:
+    resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
 
   /minipass/2.9.0:
