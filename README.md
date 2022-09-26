@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# 日新亭模板
+# 一维度模板
 
 想了解与此模板相关的任何问题，请点此链接：[![Join the chat at https://gitter.im/fengerzh-github-io/Lobby](https://badges.gitter.im/fengerzh-github-io/Lobby.svg)](https://gitter.im/fengerzh-github-io/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffengerzh%2Ffengerzh.github.io.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffengerzh%2Ffengerzh.github.io?ref=badge_shield)
@@ -14,13 +14,13 @@
 编译结果：
 [![Build Status](https://semaphoreci.com/api/v1/fengerzh/fengerzh-github-io/branches/master/shields_badge.svg)](https://semaphoreci.com/fengerzh/fengerzh-github-io)
 [![CircleCI](https://circleci.com/gh/fengerzh/fengerzh.github.io.svg?style=svg)](https://circleci.com/gh/fengerzh/fengerzh.github.io)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a467cf9fdb0a4ea3b8de6705200180f2)](https://www.codacy.com/gh/fengerzh/fengerzh.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fengerzh/fengerzh.github.io&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a467cf9fdb0a4ea3b8de6705200180f2)](https://www.codacy.com/gh/fengerzh/fengerzh.github.io/dashboard?utm_source=github.com&utm_medium=referral&utm_content=fengerzh/fengerzh.github.io&utm_campaign=Badge_Grade)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/20299d54-5dac-4395-83c6-01a47b3979ec/deploy-status)](https://app.netlify.com/sites/fengerzh/deploys)
 [![Build status](https://ci.appveyor.com/api/projects/status/0e8iejyct7g7a3dv?svg=true)](https://ci.appveyor.com/project/fengerzh/fengerzh-github-io)
 
 支持 996.icu：<a href="https://996.icu"><img src="https://img.shields.io/badge/support-996.icu-red.svg"></a>
 
-日新亭模板是一套基于`Jekyll`框架的模板，目前运行在[日新亭](https://www.fengerzh.com)网站上。日新亭网站基于[Github Pages](https://pages.github.com/)自动发布，`https`技术采用[CloudFlare](http://cloudflare.com/)方案，图床采用[Cloudinary](https://cloudinary.com/)自动压缩方案，采用[CircleCI](https://circleci.com/)进行持续集成。
+一维度模板是一套基于`Jekyll`框架的模板，目前运行在[一维度](https://www.fengerzh.com)网站上。一维度网站基于[Github Pages](https://pages.github.com/)自动发布，`https`技术采用[CloudFlare](http://cloudflare.com/)方案，图床采用[Cloudinary](https://cloudinary.com/)自动压缩方案，采用[CircleCI](https://circleci.com/)进行持续集成。
 
 此模板的基础是[Jekflix](https://github.com/thiagorossener/jekflix-template)，在此基础上做了大量定制改造，包括添加`Google`渐进式 Web 应用(`Progressive Web Apps`)功能等，以使其更加适合中文环境和对移动端友好。
 

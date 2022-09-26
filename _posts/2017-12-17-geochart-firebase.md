@@ -24,7 +24,7 @@ color: black
 ```js
 // 设定初始化数据
 var userDataObj = {
-  visitedCountries: [['Country', 'Popularity']]
+  visitedCountries: [["Country", "Popularity"]],
 };
 // 设定选项
 var optionsWorld = {};
@@ -34,7 +34,7 @@ google.charts.setOnLoadCallback(drawRegionsMap);
 function drawRegionsMap() {
   // 指定要在哪里画地图
   var chartWorld = new google.visualization.GeoChart(
-    document.getElementById('world')
+    document.getElementById("world")
   );
   // 画地图
   chartWorld.draw(
@@ -51,9 +51,13 @@ function drawRegionsMap() {
 但是如果只是简单地按照以上代码，是产生不出来图片中这些绿色方块的。那么如何加上这些绿色方块呢？下一步，我们为代码增加鼠标点击的交互：
 
 ```js
-google.visualization.events.addListener(chartWorld, 'regionClick', function(e) {
-  selectHandler(e, 'world');
-});
+google.visualization.events.addListener(
+  chartWorld,
+  "regionClick",
+  function (e) {
+    selectHandler(e, "world");
+  }
+);
 ```
 
 当鼠标点击某一区域时，则调用`selectHandler`方法：
@@ -78,7 +82,7 @@ function selectHandler(e, mapType) {
 ```js
 firebase
   .database()
-  .ref('users/' + userDataObj.uid)
+  .ref("users/" + userDataObj.uid)
   .set(userDataObj);
 ```
 
@@ -87,7 +91,7 @@ firebase
 接下来，我们来看一下如何获取这个`uid`：
 
 ```js
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   userDataObj.uid = user.uid;
 });
 ```
@@ -96,21 +100,21 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 ```js
 var uiConfig = {
-  signInSuccessUrl: 'index.html', // 登录成功之后跳转到index.html页面
+  signInSuccessUrl: "index.html", // 登录成功之后跳转到index.html页面
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID // 以Google账户登录，也可以以手机号或邮箱登录
-  ]
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID, // 以Google账户登录，也可以以手机号或邮箱登录
+  ],
 };
 
 var ui = new firebaseui.auth.AuthUI(firebase.auth()); // 创建登录区域
-ui.start('#firebaseui-auth-container', uiConfig); // 把登录区域附加到页面指定位置
+ui.start("#firebaseui-auth-container", uiConfig); // 把登录区域附加到页面指定位置
 ```
 
 用户登录成功之后，需要从`Firebase`获取他/她之前保存的数据：
 
 ```js
-var userData = firebase.database().ref('users/' + user.uid);
-userData.on('value', function(snapshot) {
+var userData = firebase.database().ref("users/" + user.uid);
+userData.on("value", function (snapshot) {
   var data = snapshot.val();
   userDataObj.visitedCountries = data.visitedCountries;
 });
@@ -120,8 +124,8 @@ userData.on('value', function(snapshot) {
 
 ```js
 var optionsChina = {
-  region: 'CN',
-  resolution: 'provinces'
+  region: "CN",
+  resolution: "provinces",
 };
 ```
 
@@ -133,7 +137,7 @@ var optionsChina = {
 
 ## 代码
 
-以上简单描述了绘制地图、添加交互、用户登录等过程，实际代码还有很多判定，感兴趣的同学可以来我的博客《[日新亭][6]》体验效果，所有代码都在[Github][7]开源，随时供大家参考。
+以上简单描述了绘制地图、添加交互、用户登录等过程，实际代码还有很多判定，感兴趣的同学可以来我的博客《[一维度][6]》体验效果，所有代码都在[Github][7]开源，随时供大家参考。
 
 [1]: https://developers.google.com/chart/interactive/docs/gallery/geochart
 [2]: https://segmentfault.com/img/bV0sDt

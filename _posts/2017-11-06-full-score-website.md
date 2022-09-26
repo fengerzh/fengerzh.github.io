@@ -111,8 +111,8 @@ color: black
 
 ```json
 {
-  "name": "日新亭",
-  "short_name": "日新亭",
+  "name": "一维度",
+  "short_name": "一维度",
   "description": "苟日新，日日新，又日新",
   "start_url": "/index.html",
   "orientation": "any",
@@ -179,38 +179,38 @@ color: black
 在你的主页面当中增加以下代码用来判断浏览器是否支持`ServiceWorker`，如果支持的话，加载`ServiceWorker`文件：
 
 ```js
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js');
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
 }
 ```
 
 然后在根目录下增加一个`serviceworker.js`的文件：
 
 ```js
-var cacheName = 'fengerzh';
+var cacheName = "fengerzh";
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/assets/js/main.js',
-  '/assets/css/main.css',
-  '/assets/img/placeholder.png',
-  '/assets/img/icons/preloader.svg',
-  '/assets/img/icons/read.svg'
+  "/",
+  "/index.html",
+  "/assets/js/main.js",
+  "/assets/css/main.css",
+  "/assets/img/placeholder.png",
+  "/assets/img/icons/preloader.svg",
+  "/assets/img/icons/read.svg",
 ];
 
-self.addEventListener('install', function(e) {
+self.addEventListener("install", function (e) {
   e.waitUntil(
-    caches.open(cacheName).then(function(cache) {
+    caches.open(cacheName).then(function (cache) {
       return cache.addAll(filesToCache);
     })
   );
 });
 
-self.addEventListener('activate', function(e) {
+self.addEventListener("activate", function (e) {
   e.waitUntil(
-    caches.keys().then(function(keyList) {
+    caches.keys().then(function (keyList) {
       return Promise.all(
-        keyList.map(function(key) {
+        keyList.map(function (key) {
           if (key !== cacheName) {
             return caches.delete(key);
           }
@@ -221,9 +221,9 @@ self.addEventListener('activate', function(e) {
   return self.clients.claim();
 });
 
-self.addEventListener('fetch', function(e) {
+self.addEventListener("fetch", function (e) {
   e.respondWith(
-    caches.match(e.request).then(function(response) {
+    caches.match(e.request).then(function (response) {
       return response || fetch(e.request);
     })
   );

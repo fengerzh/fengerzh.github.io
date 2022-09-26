@@ -1,18 +1,21 @@
 {
-  "name": "日新亭",
-  "short_name": "日新亭",
+  "name": "一维度",
+  "short_name": "一维度",
   "description": "苟日新，日日新，又日新",
   "start_url": "/index.html",
   "orientation": "any",
-  "icons": [{
-    "src": "/assets/img/icons/android-chrome-512x512.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }, {
-    "src": "/assets/img/icons/android-chrome-192x192.png",
-    "sizes": "192x192",
-    "type": "image/png"
-  }],
+  "icons": [
+    {
+      "src": "/assets/img/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",
