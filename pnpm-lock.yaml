@@ -8,7 +8,7 @@ specifiers:
   gulp-concat: 2.6.1
   gulp-imagemin: 8.0.0
   gulp-plumber: 1.2.1
-  gulp-stylus: 2.7.0
+  gulp-stylus: 2.7.1
   gulp-uglify: 3.0.2
   jeet: 7.2.0
   kouto-swiss: 1.1.0
@@ -23,7 +23,7 @@ devDependencies:
   gulp-concat: 2.6.1
   gulp-imagemin: 8.0.0_gulp@4.0.2
   gulp-plumber: 1.2.1
-  gulp-stylus: 2.7.0
+  gulp-stylus: 2.7.1
   gulp-uglify: 3.0.2
   jeet: 7.2.0
   kouto-swiss: 1.1.0
@@ -2434,15 +2434,15 @@ packages:
       through2: 2.0.5
     dev: true
 
-  /gulp-stylus/2.7.0:
-    resolution: {integrity: sha512-LlneLeHcaRBaEqxwo5YCirpsfkR7uleQ4pHXW8IE2ZeA6M3jpgI90+zQ6SptMTSWr1RSQW3WYFZVA3P0coUojw==}
+  /gulp-stylus/2.7.1:
+    resolution: {integrity: sha512-lrM6yDGhywePjnoE8TkztDU7MuktaaFu4P2oPINdkmgC3d56G36vwLuOWJcORwsN4K6iou4dVKw9l4LOhtRrJQ==}
     engines: {node: '>= 4.2.0'}
     dependencies:
       accord: 0.26.4
       lodash.assign: 3.2.0
       plugin-error: 0.1.2
       replace-ext: 0.0.1
-      stylus: 0.54.7
+      stylus: 0.54.8
       through2: 2.0.5
       vinyl-sourcemaps-apply: 0.2.1
     dev: true
@@ -3566,6 +3566,12 @@ packages:
     hasBin: true
     dependencies:
       minimist: 0.0.8
+    dev: true
+
+  /mkdirp/1.0.4:
+    resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
+    engines: {node: '>=10'}
+    hasBin: true
     dev: true
 
   /mozjpeg/7.1.0:
@@ -5141,14 +5147,14 @@ packages:
       - supports-color
     dev: true
 
-  /stylus/0.54.7:
-    resolution: {integrity: sha512-Yw3WMTzVwevT6ZTrLCYNHAFmanMxdylelL3hkWNgPMeTCpMwpV3nXjpOHuBXtFv7aiO2xRuQS6OoAdgkNcSNug==}
+  /stylus/0.54.8:
+    resolution: {integrity: sha512-vr54Or4BZ7pJafo2mpf0ZcwA74rpuYCZbxrHBsH8kbcXOwSfvBFwsRfpGO5OD5fhG5HDCFW737PKaawI7OqEAg==}
     hasBin: true
     dependencies:
       css-parse: 2.0.0
       debug: 3.1.0
       glob: 7.1.6
-      mkdirp: 0.5.1
+      mkdirp: 1.0.4
       safer-buffer: 2.1.2
       sax: 1.2.4
       semver: 6.3.0
