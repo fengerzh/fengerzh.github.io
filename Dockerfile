@@ -1,4 +1,4 @@
-FROM alpine:3.15.0
+FROM alpine:3.18.5
 LABEL maintainer="buzz.zhang@gmail.com"
 
 ENV BUILD_PACKAGES bash curl-dev ruby-dev build-base
